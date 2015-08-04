@@ -31,7 +31,13 @@ $("#header").prepend(formattedRole);
 
 $("#header").prepend(formattedName);
 
+var skills = ["awesomness","amazingness","JS","HTML","CSS"]
 
+$("#main").append(skills);
+
+$("#main").append(skills[0]);
+
+$("#main").append(skills.length)
 
 /*
 This is empty on purpose! Your code to build the resume will go here.
