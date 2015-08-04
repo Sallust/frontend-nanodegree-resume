@@ -1,11 +1,7 @@
-$("#main").append("Danny Haile");
-
 var firstName = "Danny";
 
-var name = "Danny Haile"
-var role = "Front-End Web Developer"
-
-console.log(firstName);
+var name = "Danny Haile";
+var role = "Front-End Web Developer";
 
 var awesomeThoughts = "I am pretty awesome! How awesome you wonder?";
 
@@ -15,13 +11,7 @@ console.log("Mind Blown!");
 
 var email = "daniyom@gmail.com";
 
-console.log(email.replace("gmail","awesome"));
-
-var funThoughts = awesomeThoughts.replace("awesome","fuckin awesome");
-
-console.log(funThoughts)
-
-$("#main").append(funThoughts);
+//var funThoughts = awesomeThoughts.replace("awesome","fuckin awesome");
 
 var formattedName = HTMLheaderName.replace("%data%",name);
 
@@ -33,11 +23,41 @@ $("#header").prepend(formattedName);
 
 var skills = ["awesomness","amazingness","JS","HTML","CSS"]
 
-$("#main").append(skills);
+var bio = {
+	"name" : "Danny",
+	"role" : "Front-End Ninja in Training",
+	"contacts" : {
+		"mobile" : "240-476-7892",
+		"email": email,
+		"github" : "Sallust",
+		"twitter" : "@SallustV",
+		"location" : "Washington DC"
+	},
+	"welcome" : "Welcome to the awesomness that is my resume",
+	"pictureURL" : "images/me.jpg",
+	"skills" : skills,
 
-$("#main").append(skills[0]);
 
-$("#main").append(skills.length)
+
+ };
+
+var formattedContact = HTMLcontactGeneric.replace("%contact%",bio.contact);
+
+var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcome);
+
+var formattedPicture = HTMLbioPic.replace("%data%",bio.pictureURL);
+
+var formattedSkills = HTMLskills.replace("%data%",bio.skills);
+
+$("#header").append(formattedPicture);
+
+$("#topContacts").append(formattedContact);
+
+$("#header").append(formattedWelcome);
+
+$("#header").append(formattedSkills);
+
+$("#main").append(bio.name);
 
 /*
 This is empty on purpose! Your code to build the resume will go here.
