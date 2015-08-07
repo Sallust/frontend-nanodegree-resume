@@ -11,7 +11,7 @@ var bio = {
 	"role" : "Front-End Ninja in Training",
 	"contacts" : {
 		"mobile" : "240-476-7892",
-		"email": email,
+		"email": "daniyom@gmail.com",
 		"github" : "Sallust",
 		"twitter" : "@SallustV",
 		"location" : "Washington DC"
@@ -101,3 +101,8 @@ var education = {
     ]
 }
 
+if (bio.skills) {
+	$("#header").append(HTMLskillsStart);
+}
+
+$("#skills").append(HTMLskills.replace("%data%",bio.skills.join(" ")));
