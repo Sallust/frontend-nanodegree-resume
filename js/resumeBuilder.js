@@ -62,3 +62,42 @@ var projects = {
 	]
 }
 
+var education = {
+    "schools": [
+        {
+            "name": "Harvard University",
+            "city": "Cambridge, MA",
+            "degree": "BA",
+            "major": "Economics",
+            "url":"http://www.harvard.edu/"
+        },
+        {
+            "name": "University of California Berkeley",
+            "city": "Berkeley, CA",
+            "degree": "coursework",
+            "major": "Accounting",
+            "url":"http://www.berkeley.edu/"
+        }
+    ],
+    "onlineCourses":[
+    	{
+    		"title":"JavaScript",
+    		"school":"Udacity",
+    		"dates":"Summer 2015",
+    		"url":"https://www.udacity.com/course/javascript-basics--ud804"
+    	},
+    	{
+    		"title":"Intro to HTML & CSS",
+    		"school":"Udacity",
+    		"dates":"Summer 2015",
+    		"url":"https://www.udacity.com/course/intro-to-html-and-css--ud304"
+    	},
+    	{
+    		"title":"Programming Foundations with Python",
+    		"school":"Udacity",
+    		"dates":"Summer 2015",
+    		"url":"https://www.udacity.com/course/programming-foundations-with-python--ud036"
+    	}
+    ]
+}
+
