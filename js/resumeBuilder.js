@@ -39,6 +39,15 @@ var work = {
 		}
 	]
 }
+for (job in work.jobs) {
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	$(".work-entry:last").append(formattedEmployer+formattedTitle);
+
+}
+
+
 var projects = {
 	"project": [
 		{
@@ -106,3 +115,6 @@ if (bio.skills) {
 }
 
 $("#skills").append(HTMLskills.replace("%data%",bio.skills.join(" ")));
+
+
+
