@@ -21,6 +21,30 @@ var bio = {
 	"skills" : skills
  };
 
+ var formattedName = HTMLheaderName.replace("%data%",name);
+
+var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+
+$("#header").prepend(formattedRole);
+
+$("#header").prepend(formattedName);
+
+var formattedContact = HTMLcontactGeneric.replace("%contact%",bio.contact);
+
+var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcome);
+
+var formattedPicture = HTMLbioPic.replace("%data%",bio.pictureURL);
+
+var formattedSkills = HTMLskills.replace("%data%",bio.skills);
+
+$("#header").append(formattedPicture);
+
+$("#topContacts").append(formattedContact);
+
+$("#header").append(formattedWelcome);
+
+$("#header").append(formattedSkills);
+
 var work = {
 	"jobs": [
 		{
@@ -43,7 +67,11 @@ for (job in work.jobs) {
 	$("#workExperience").append(HTMLworkStart);
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	$(".work-entry:last").append(formattedEmployer+formattedTitle);
+	var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+	$(".work-entry:last").append(formattedEmployer+formattedTitle+formattedDate+formattedLocation+formattedworkDescription);
 
 }
 
