@@ -1,5 +1,5 @@
 var firstName = "Danny";
-
+var name = "Danny Haile"
 
 
 
@@ -151,3 +151,18 @@ $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
 
 });
+
+$("#main").append(internationalizeButton)
+
+function inName() {
+	names = name.split(" ");
+
+
+    names[1] = names[1].toUpperCase();
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+
+
+
+	return names[0] + " " + names[1]
+
+}
