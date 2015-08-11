@@ -63,18 +63,20 @@ var work = {
 		}
 	]
 }
-for (job in work.jobs) {
-	$("#workExperience").append(HTMLworkStart);
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+var displayWork = function() {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-	$(".work-entry:last").append(formattedEmployer+formattedTitle+formattedDate+formattedLocation+formattedworkDescription);
-
+		$(".work-entry:last").append(formattedEmployer+formattedTitle+formattedDate+formattedLocation+formattedworkDescription);
+	}
 }
 
+displayWork();
 
 var projects = {
 	"project": [
@@ -145,4 +147,7 @@ if (bio.skills) {
 $("#skills").append(HTMLskills.replace("%data%",bio.skills.join(" ")));
 
 
+$(document).click(function(loc) {
+	logClicks(loc.pageX, loc.pageY);
 
+});
