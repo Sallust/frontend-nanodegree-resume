@@ -14,7 +14,7 @@ var bio = {
 		"email": "daniyom@gmail.com",
 		"github" : "Sallust",
 		"twitter" : "@SallustV",
-		"location" : "Washington DC"
+		"location" : "Washington, DC"
 	},
 	"welcome" : "Welcome to the awesomness that is my resume",
 	"pictureURL" : "images/me.jpg",
@@ -57,7 +57,7 @@ var work = {
 		{
 			"employer":"Becker Consulting",
 			"title":"Research Associate",
-			"location":"Washington DC",
+			"location":"Washington, DC",
 			"dates":"Oct 2006-Feb 2007",
 			"description":"Provided client research support through database creation and aggregating scientific, industry and regulatory information."
 		}
@@ -124,14 +124,14 @@ var education = {
     "schools": [
         {
             "name": "Harvard University",
-            "city": "Cambridge, MA",
+            "location": "Cambridge, MA",
             "degree": "BA",
             "major": "Economics",
             "url":"http://www.harvard.edu/"
         },
         {
             "name": "University of California Berkeley",
-            "city": "Berkeley, CA",
+            "location": "Berkeley, CA",
             "degree": "coursework",
             "major": "Accounting",
             "url":"http://www.berkeley.edu/"
