@@ -90,7 +90,7 @@ var projects = {
 			"title":"Python Turtles",
 			"dates":"June 2015",
 			"description":"Using Python classes to create a visualization",
-			"images":["images/turtle.jpg"]
+			"images":["images/turtles.jpg"]
 		},
 		{
 			"title":"Movie Website",
@@ -100,6 +100,25 @@ var projects = {
 		}
 	]
 }
+
+projects.display = function() {
+	for (project in projects.project) {
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
+		var formattedDate = HTMLprojectDates.replace("%data%", projects.project[project].dates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
+		var formattedImages = ""
+		for (image in projects.project[project].images) {
+			var formattedImage = HTMLprojectImage.replace("%data%", projects.project[project].images[image]);
+			formattedImages = formattedImages + formattedImage;
+		}
+		$(".project-entry:last").append(formattedTitle+formattedDate+formattedDescription+formattedImages);
+
+	}
+
+}
+projects.display();
+
 
 var education = {
     "schools": [
@@ -159,10 +178,12 @@ function inName() {
 
 
     names[1] = names[1].toUpperCase();
-    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    names[0] = names[0][0].toUpperCase() + names[0].slice(1).toLowerCase();
 
 
 
 	return names[0] + " " + names[1]
 
 }
+
+$("#mapDiv").append(googleMap)
