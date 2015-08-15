@@ -1,13 +1,10 @@
-var firstName = "Danny";
-var name = "Danny Haile"
 
 
 
-
-var skills = ["awesomness","amazingness","JS","HTML","CSS"]
+//var skills = ["awesomness","amazingness","JS","HTML","CSS"]
 
 var bio = {
-	"name" : "Danny",
+	"name" : "Danny Haile",
 	"role" : "Front-End Ninja in Training",
 	"contacts" : {
 		"mobile" : "240-476-7892",
@@ -18,32 +15,48 @@ var bio = {
 	},
 	"welcome" : "Welcome to the awesomness that is my resume",
 	"pictureURL" : "images/me.jpg",
-	"skills" : skills
+	"skills" : ["awesomness","amazingness","JS","HTML","CSS"]
  };
 
- var formattedName = HTMLheaderName.replace("%data%",name);
 
-var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
 
-$("#header").prepend(formattedRole);
 
-$("#header").prepend(formattedName);
 
-var formattedContact = HTMLcontactGeneric.replace("%contact%",bio.contact);
 
-var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcome);
+bio.display = function() {
+	var formattedName = HTMLheaderName.replace("%data%",bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+	var formattedPicture = HTMLbioPic.replace("%data%",bio.pictureURL);
+	var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcome);
 
-var formattedPicture = HTMLbioPic.replace("%data%",bio.pictureURL);
+	for (contact in bio.contacts) {
+		window['formatted' + capital(contact)] = HTMLcontactGeneric.replace("%contact%",contact).replace("%data%",bio.contacts[contact]);
+	}
+	$("#header").prepend(formattedName,formattedRole);
 
-var formattedSkills = HTMLskills.replace("%data%",bio.skills);
 
-$("#header").append(formattedPicture);
 
-$("#topContacts").append(formattedContact);
+	$("#header").append(formattedPicture);
 
-$("#header").append(formattedWelcome);
+	$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub);
 
-$("#header").append(formattedSkills);
+	$("#header").append(formattedWelcome);
+
+
+
+	if (bio.skills) {
+		$("#header").append(HTMLskillsStart);
+	}
+	for (skill in bio.skills) {
+		var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill])
+		$("#skills").prepend(formattedSkill)
+	}
+
+
+
+}
+
+bio.display();
 
 var work = {
 	"jobs": [
@@ -159,11 +172,8 @@ var education = {
     ]
 }
 
-if (bio.skills) {
-	$("#header").append(HTMLskillsStart);
-}
 
-$("#skills").append(HTMLskills.replace("%data%",bio.skills.join(" ")));
+
 
 
 $(document).click(function(loc) {
@@ -187,3 +197,7 @@ function inName() {
 }
 
 $("#mapDiv").append(googleMap)
+
+function capital (str) {
+	return str[0].toUpperCase()+str.substr(1);
+}
