@@ -32,17 +32,12 @@ bio.display = function() {
 	for (contact in bio.contacts) {
 		window['formatted' + capital(contact)] = HTMLcontactGeneric.replace("%contact%",contact).replace("%data%",bio.contacts[contact]);
 	}
+
 	$("#header").prepend(formattedName,formattedRole);
-
-
-
-	$("#header").append(formattedPicture);
+	$("#header").append(formattedPicture,formattedWelcome);
 
 	$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub);
-
-	$("#header").append(formattedWelcome);
-
-
+	$("#footerContacts").append(formattedMobile,formattedTwitter)
 
 	if (bio.skills) {
 		$("#header").append(HTMLskillsStart);
@@ -51,9 +46,6 @@ bio.display = function() {
 		var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill])
 		$("#skills").prepend(formattedSkill)
 	}
-
-
-
 }
 
 bio.display();
@@ -76,7 +68,7 @@ var work = {
 		}
 	]
 }
-var displayWork = function() {
+work.display = function() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -89,7 +81,7 @@ var displayWork = function() {
 	}
 }
 
-displayWork();
+work.display();
 
 var projects = {
 	"project": [
@@ -125,10 +117,8 @@ projects.display = function() {
 			var formattedImage = HTMLprojectImage.replace("%data%", projects.project[project].images[image]);
 			formattedImages = formattedImages + formattedImage;
 		}
-		$(".project-entry:last").append(formattedTitle+formattedDate+formattedDescription+formattedImages);
-
+		$(".project-entry:last").append(formattedTitle,formattedDate,formattedDescription,formattedImages);
 	}
-
 }
 projects.display();
 
@@ -139,6 +129,7 @@ var education = {
             "name": "Harvard University",
             "location": "Cambridge, MA",
             "degree": "BA",
+            "dates": "2000-2005",
             "major": "Economics",
             "url":"http://www.harvard.edu/"
         },
@@ -146,6 +137,7 @@ var education = {
             "name": "University of California Berkeley",
             "location": "Berkeley, CA",
             "degree": "coursework",
+            "dates": "Summer 2004",
             "major": "Accounting",
             "url":"http://www.berkeley.edu/"
         }
@@ -171,10 +163,21 @@ var education = {
     	}
     ]
 }
+education.display = function() {
+
+	for (school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+		var formattedSchool = HTMLschoolName.replace("%data%",education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+		var formattedDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
+		var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].major);
+		$(".education-entry:last").append(formattedSchool,formattedDegree,formattedDates,formattedLocation,formattedMajor)
+	}
+}
 
 
-
-
+education.display();
 
 $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
