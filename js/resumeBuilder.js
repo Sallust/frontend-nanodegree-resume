@@ -174,6 +174,15 @@ education.display = function() {
 		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].major);
 		$(".education-entry:last").append(formattedSchool,formattedDegree,formattedDates,formattedLocation,formattedMajor)
 	}
+	$("#education").append(HTMLonlineClasses);
+	for (course in education.onlineCourses) {
+		$("#education").append(HTMLonlineClassStart)
+		var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
+		var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
+		var formattedDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
+		var formattedURL = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url);
+		$(".online-entry:last").append(formattedTitle+formattedSchool+formattedDates+formattedURL);
+	}
 }
 
 
