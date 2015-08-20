@@ -43,6 +43,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <!-- More on helper.js in the class -->
   <script src="js/helper.js"></script>
 
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
+    </script>
+
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
@@ -50,41 +53,46 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-  <link rel="import" href="/bower_components/iron-flex-layout/classes/iron-flex-layout.html"> <!-- import layout attributes classes -->
-</head>
-<body class="fullbleed layout vertical">
-  <div id="main">
-     <!-- You'll be deleting this line in the course -->
 
-    <!--
-    Everything from here to the <script> tag below is the skeleton of your
-    website. Your code will add information to each of the sections of the
-    resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
-    -->
-    <div id="header" class="center-content clear-fix">
-      <ul id="topContacts" class="flex-box"></ul>
-    </div>
-    <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
-    </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
-  </div>
+  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+
+  <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html"> <!-- import layout attributes classes -->
+  <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+
+</head>
+<body id="main" class="fullbleed layout vertical">
+
+
+
+    <paper-scroll-header-panel class="flex">
+      <paper-toolbar class="title" id="header">
+        <div id="toolbar-header"></div>
+
+      </paper-toolbar>
+
+
+      <div id="header" class="center-content clear-fix">
+        <ul id="topContacts" class="flex-box"></ul>
+      </div>
+      <div style="clear: both;"></div>
+      <div id="workExperience" class="gray">
+        <h2>Work Experience</h2>
+      </div>
+      <div id="projects">
+        <h2>Projects</h2>
+      </div>
+      <div id="education" class="gray">
+        <h2>Education</h2>
+      </div>
+      <div id="mapDiv">
+        <h2>Where I've Lived and Worked</h2>
+      </div>
+      <div id="lets-connect" class="dark-gray">
+        <h2 class="orange center-text">Let's Connect</h2>
+          <ul id="footerContacts" class="flex-box">
+        </ul>
+      </div>
+    </paper-scroll-header-panel>
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
@@ -139,5 +147,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       document.getElementById('mapDiv').style.backgroundColor = "black";
     }
   </script>
+
 </body>
 </html>

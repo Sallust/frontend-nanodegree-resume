@@ -106,7 +106,7 @@ bio.display = function() {
 		window['formatted' + capital(contact)] = HTMLcontactGeneric.replace("%contact%",contact).replace("%data%",bio.contacts[contact]);
 	}  //Creation of formattedContact variables using HTMLcontactGeneric
 
-	$("#header").prepend(formattedName,formattedRole);
+	$("#toolbar-header").prepend(formattedName,formattedRole);
 	$("#header").append(formattedPicture,formattedWelcome);
 
 	$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub);

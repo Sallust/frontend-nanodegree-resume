@@ -1,6 +1,35 @@
 /* Custom CSS styles */
-
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
 .project-images {
 	width: 150px;
 	height: 150px;
+}
+
+paper-scroll-header-panel {
+
+
+
+
+	}
+
+paper-toolbar {
+	  background-color: green;
+	}
+
+
+
+paper-scroll-header-panel {
+  --paper-scroll-header-panel-full-header: {
+    background-color: red;
+  };
+}
+
+paper-scroll-header-panel {
+  --paper-scroll-header-panel-condensed-header: {
+    background-color: #f4b400;
+  };
 }
