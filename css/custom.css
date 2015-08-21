@@ -15,9 +15,28 @@ body {
 
 paper-toolbar.tall {
 	  background-color: transparent;
+	  height: 256px;
 	}
 
 
+
+<style is="custom-style">
+:root {
+	--paper-scroll-header-panel-full-header: {
+		background-image: url(../images/Washington-800-1x.jpg);
+	};
+	--paper-scroll-header-panel-condensed-header: {
+        background-color: #f4b400;
+    };
+
+}
+
+
+</style>
+
+
+
+/*
 .paper-scroll-header-panel-0 #headerBg.paper-scroll-header-panel {
 	background-color: green;
 }
