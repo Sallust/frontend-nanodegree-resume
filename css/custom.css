@@ -1,4 +1,8 @@
 /* Custom CSS styles */
+
+@import "../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html";
+
+
 html,
 body {
 	height: 100%;
@@ -9,27 +13,42 @@ body {
 	height: 150px;
 }
 
-paper-scroll-header-panel {
-
-
-
-
-	}
-
-paper-toolbar {
-	  background-color: green;
+paper-toolbar.tall {
+	  background-color: transparent;
 	}
 
 
-
-paper-scroll-header-panel {
-  --paper-scroll-header-panel-full-header: {
-    background-color: red;
-  };
+.paper-scroll-header-panel-0 #headerBg.paper-scroll-header-panel {
+	background-color: green;
 }
 
-paper-scroll-header-panel {
-  --paper-scroll-header-panel-condensed-header: {
-    background-color: #f4b400;
-  };
+.paper-scroll-header-panel-0 #condensedHeaderBg.paper-scroll-header-panel {
+  background-color: orange;
 }
+/*
+paper-scroll-header-panel {
+	background-color: var(grey, #eee);
+	--paper-scroll-header-panel-condensed-header: {
+        background-color: var(orange, #ff5722);
+      };
+	--paper-scroll-header-panel-full-header: {
+        background-image: url(../images/movies.jpg);
+      };
+}
+
+
+
+
+background-color: var(--paper-scroll-header-panel-full-header, green);
+
+paper-scroll-header-panel {
+      --paper-scroll-header-panel-full-header: {
+        background-color: red;
+      };
+    }
+
+paper-scroll-header-panel {
+      --paper-scroll-header-panel-condensed-header: {
+        background-color: #f4b400;
+      };
+    }

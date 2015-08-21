@@ -54,18 +54,45 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <meta name="viewport" content="width=device-width">
 
-  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+
 
   <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html"> <!-- import layout attributes classes -->
   <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!--
+  <style>
+    paper-scroll-header-panel {
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      /* background for toolbar when it is at its full size */
+      --paper-scroll-header-panel-full-header: {
+        background-image: url(images/movies.jpg);
+      };
+
+      /* background for toolbar when it is condensed */
+      --paper-scroll-header-panel-condensed-header: {
+        background-color: ;
+      };
+    }
+
+
+
+  </style>   -->
 
 </head>
 <body id="main" class="fullbleed layout vertical">
 
 
 
-    <paper-scroll-header-panel class="flex">
-      <paper-toolbar class="title" id="header">
+    <paper-scroll-header-panel condenses class="flex">
+      <paper-toolbar class="title tall">
         <div id="toolbar-header"></div>
 
       </paper-toolbar>
