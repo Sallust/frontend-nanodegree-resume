@@ -18,6 +18,13 @@ paper-toolbar.tall {
 	  height: 256px;
 	}
 
+.purple {
+	background-color: purple;
+}
+
+.green {
+	background-color: green;
+}
 
 
 <style is="custom-style">
@@ -33,6 +40,7 @@ paper-toolbar.tall {
 
 
 </style>
+
 
 
 

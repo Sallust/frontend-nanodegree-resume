@@ -15,7 +15,8 @@ h6 {
 }
 
 .clear-fix {
-  overflow: auto;
+  height: 500px;
+  /*overflow: auto;/*/
 }
 
 .education-entry,
