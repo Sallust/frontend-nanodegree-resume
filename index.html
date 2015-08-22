@@ -31,7 +31,7 @@
   <link rel="import" href="bower_components/paper-card/paper-card.html">
 
   <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
-  <link rel="import" href="bower_components/neon-animation/neon-animatable.html">
+  <link rel="import" href="bower_components/neon-animation/my-neon-animatable.html">
   <link rel="import" href="bower_components/neon-animation/neon-animations.html">
   <link rel="import" href="css/custom.css">
 
@@ -67,44 +67,49 @@
 
 
         </paper-toolbar>
+        <div class="horizontal layout">
+          <div id="mid-header" class="center-content clear-fix">
+                <ul id="topContacts" class="flex-box"></ul>
+          </div>
 
-
-
-        <neon-animated-pages selected="{{selected}}" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
-          <neon-animatable>
-            <div id="mid-header" class="center-content clear-fix">
-              <ul id="topContacts" class="flex-box"></ul>
-            </div>
-          </neon-animatable>
-          <neon-animatable  class="purple">
-            <div id="workExperience" class="purple">
-              <h2>Work Experience</h2>
-            </div>
-          </neon-animatable>
-          <neon-animatable>
-            <div id="projects" class="green">
-              <h2>Projects</h2>
-            </div>
-          </neon-animatable>
-          <neon-animatable>
-            <div id="education" class="purple">
-              <h2>Education</h2>
-            </div>
-          </neon-animatable>
-          <neon-animatable>
-            <div id="mapDiv">
-              <h2>Where I've Lived and Worked</h2>
-            </div>
-          </neon-animatable>
-          <neon-animatable>
-            <div id="lets-connect" class="green">
-              <lets-connect></lets-connect>
-              <h2 class="orange center-text">Let's Connect</h2>
-              <ul id="footerContacts" class="flex-box">
-              </ul>
-            </div>
-          </neon-animatable>
-        </neon-animated-pages>
+          <div class="flex">
+          <neon-animated-pages selected="{{selected}}"> <!-- entry-animation="slide-from-left-animation" exit-animation="slide-right-animation" -->
+            <my-neon-animatable>
+              <div id="mid-header" class="center-content clear-fix">
+                <ul id="topContacts" class="flex-box"></ul>
+              </div>
+            </my-neon-animatable>
+            <my-neon-animatable>
+              <div id="workExperience" class="purple">
+                <h2>Work Experience</h2>
+              </div>
+            </my-neon-animatable>
+            <my-neon-animatable>
+              <div id="projects" class="green">
+                <h2>Projects</h2>
+              </div>
+            </my-neon-animatable>
+            <my-neon-animatable>
+              <div id="education" class="purple">
+                <h2>Education</h2>
+              </div>
+            </my-neon-animatable>
+            <my-neon-animatable>
+              <div id="mapDiv">
+                <h2>Where I've Lived and Worked</h2>
+              </div>
+            </my-neon-animatable>
+            <my-neon-animatable>
+              <div id="lets-connect" class="green">
+                <lets-connect></lets-connect>
+                <h2 class="orange center-text">Let's Connect</h2>
+                <ul id="footerContacts" class="flex-box">
+                </ul>
+              </div>
+            </my-neon-animatable>
+          </neon-animated-pages>
+        </div>
+      </div>
     </paper-scroll-header-panel>
   </template>
   <script>           /*   */

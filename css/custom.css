@@ -17,7 +17,9 @@ paper-toolbar.tall {
 	  background-color: transparent;
 	  height: 256px;
 	}
-
+#mid-header {
+	width: 300px;
+}
 .purple {
 	background-color: purple;
 }
