@@ -1,25 +1,38 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
-<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js">
     </script>
 
 <dom-module id="lets-connect">
 	<template>
-		<p>I hope I will grow into a very important form one day</p>
+		<style>
+			.form-container {
+				width: 350px;
+			}
 
+
+
+		</style>
+		<div class="form-container">
+			<form is="iron-form" id="form2" method="get" action="/">
+				<paper-input name="name" required></paper-input>
+				<paper-input name="company" required></paper-input>
+				<paper-button raised type="submit" onclick="clickHandler(event)">Submit</paper-button>
+			</form>
+		</div>
 
 	</template>
 	<script>
 		Polymer({
 			is: "lets-connect",
-
 		});
 
-
-
-
-
-
-
-
+		function clickHandler(event) {
+		      Polymer.dom(event).localTarget.parentElement.submit();
+		      console.log(document.getElementById('form2').serialize());
+		}
 	</script>
+</dom-module>
