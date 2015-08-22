@@ -62,7 +62,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <link rel="import" href="bower_components/iron-pages/iron-pages.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+  <link rel="import" href="bower_components/paper-card/paper-card.html">
   <link rel="import" href="css/custom.css">
+
+  <link rel="import" href="elements/lets-connect.html">
 
 
 </head>
@@ -112,7 +115,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
             <h2>Where I've Lived and Worked</h2>
           </div>
           <div id="lets-connect" class="dark-gray">
+
+
             <h2 class="orange center-text">Let's Connect</h2>
+            <lets-connect></lets-connect>
             <ul id="footerContacts" class="flex-box">
             </ul>
           </div>
@@ -123,7 +129,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
 
-        <div style="clear: both;"></div>
 
 
 
@@ -132,10 +137,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
     </paper-scroll-header-panel>
   </template>
-    <script>
+    <script>           /*   */
   var tabs = document.querySelector('paper-tabs');
 var pages = document.querySelector('iron-pages');
-pages.selected=0;
+pages.selected=0;   /* initially set selected to bio tab */
 
 tabs.addEventListener('iron-select',function(){
   pages.selected = tabs.selected;
