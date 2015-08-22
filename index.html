@@ -59,6 +59,9 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html"> <!-- import layout attributes classes -->
   <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+  <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
   <link rel="import" href="css/custom.css">
 
 
@@ -68,35 +71,77 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     <paper-scroll-header-panel condenses keep-condensed-header header-height="256" class="flex">
-      <paper-toolbar class="tall">
 
-        <div id="toolbar-header" class="title bottom"></div>
+        <paper-toolbar class="tall">
+          <div id="toolbar-header" class="title bottom"></div>
 
-      </paper-toolbar>
+          <div class="flex bottom"></div>
+
+          <paper-tabs selected="{{selected}}" class="bottom">
+
+              <paper-tab>Tab 1</paper-tab>
+              <paper-tab>Tab 2</paper-tab>
+              <paper-tab>Tab 3</paper-tab>
+              <paper-tab>Tab 1</paper-tab>
+              <paper-tab>Tab 1</paper-tab>
+              <paper-tab>Tab 1</paper-tab>
 
 
-      <div id="mid-header" class="center-content clear-fix">
-        <ul id="topContacts" class="flex-box"></ul>
-      </div>
-      <div style="clear: both;"></div>
-      <div id="workExperience" class="gray">
-        <h2>Work Experience</h2>
-      </div>
-      <div id="projects">
-        <h2>Projects</h2>
-      </div>
-      <div id="education" class="gray">
-        <h2>Education</h2>
-      </div>
-      <div id="mapDiv">
-        <h2>Where I've Lived and Worked</h2>
-      </div>
-      <div id="lets-connect" class="dark-gray">
-        <h2 class="orange center-text">Let's Connect</h2>
-          <ul id="footerContacts" class="flex-box">
-        </ul>
-      </div>
+          </paper-tabs>
+
+
+
+
+
+        </paper-toolbar>
+
+        <iron-pages selected="{{selected}}">
+          <div id="mid-header" class="center-content clear-fix">
+            <ul id="topContacts" class="flex-box"></ul>
+          </div>
+          <div id="workExperience" class="gray">
+            <h2>Work Experience</h2>
+          </div>
+          <div id="projects">
+            <h2>Projects</h2>
+          </div>
+          <div id="education" class="gray">
+            <h2>Education</h2>
+          </div>
+          <div id="mapDiv">
+            <h2>Where I've Lived and Worked</h2>
+          </div>
+          <div id="lets-connect" class="dark-gray">
+            <h2 class="orange center-text">Let's Connect</h2>
+            <ul id="footerContacts" class="flex-box">
+            </ul>
+          </div>
+        </iron-pages>
+
+
+
+
+
+
+        <div style="clear: both;"></div>
+
+
+
+
+
+
     </paper-scroll-header-panel>
+  </template>
+    <script>
+  var tabs = document.querySelector('paper-tabs');
+var pages = document.querySelector('iron-pages');
+pages.selected=0;
+
+tabs.addEventListener('iron-select',function(){
+  pages.selected = tabs.selected;
+
+});
+</script>
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
