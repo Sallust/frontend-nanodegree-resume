@@ -9,6 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-styles/paper-styles.html">
+<link rel="import" href="../neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../neon-animation/neon-shared-element-animatable-behavior.html">
 
 <!--
 `paper-toolbar` is a horizontal bar containing items that can be used for
@@ -90,7 +92,7 @@ be used as the label of the toolbar via `aria-labelledby`.
       /* size */
       height: 64px;
 
-      background: var(--paper-toolbar-background, --default-primary-color);
+      background: var(--paper-toolbar-background, --paper-indigo-500);
       color: var(--paper-toolbar-color, --text-primary-color);
 
       @apply(--paper-toolbar);
@@ -106,7 +108,7 @@ be used as the label of the toolbar via `aria-labelledby`.
     }
 
     :host(.tall) {
-      height: 192px;
+      height: 128px;
     }
 
     .toolbar-tools {
@@ -130,7 +132,7 @@ be used as the label of the toolbar via `aria-labelledby`.
       }
 
       :host(.tall) {
-        height: 168px;
+        height: 112px;
       }
 
       .toolbar-tools {
@@ -265,11 +267,32 @@ be used as the label of the toolbar via `aria-labelledby`.
 
       is: 'paper-toolbar',
 
+      behaviors: [
+        Polymer.NeonAnimationRunnerBehavior,
+        Polymer.NeonAnimationBehavior,
+      ],
+
+
       hostAttributes: {
         'role': 'toolbar'
       },
 
       properties: {
+        animationConfig: {
+        value: function() {
+          return {
+            'entry': [{
+            // provided by neon-animation/animations/scale-up-animation.html
+              name: 'fade-in-animation',
+              node: this
+            }, {
+              name:'slide-down-animation',
+              node: this,
+              timing: {delay: 0}
+              }]
+            }
+          }
+        },
 
         /**
          * Controls how the items are aligned horizontally when they are placed
@@ -313,6 +336,10 @@ be used as the label of the toolbar via `aria-labelledby`.
         }
 
       },
+      show: function() {
+        this.style.visibility = 'visible';
+        this.playAnimation('entry');
+      },
 
       attached: function() {
         this._observer = this._observe(this);
@@ -335,6 +362,8 @@ be used as the label of the toolbar via `aria-labelledby`.
         });
         return observer;
       },
+
+
 
       _updateAriaLabelledBy: function() {
         var labelledBy = [];

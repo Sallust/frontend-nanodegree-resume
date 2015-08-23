@@ -1,25 +1,31 @@
 /* Custom CSS styles */
 
-@import "../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html";
-
-
 html,
 body {
 	height: 100%;
 	margin: 0;
+	background-image: url(../images/capitol-1020.jpg);
 }
 .project-images {
 	width: 150px;
 	height: 150px;
 }
 
-paper-toolbar.tall {
-	  background-color: transparent;
-	  height: 256px;
-	}
+
 #mid-header {
 	width: 240px;
 }
+
+.med-bkgrd {
+	background-color: #FFB74D;
+
+}
+
+.light-bkgrd {
+	background-color: #FFA726;
+
+}
+
 .purple {
 	background-color: purple;
 }
@@ -37,19 +43,13 @@ paper-toolbar.tall {
 	border-radius: 150px;
 }
 
-<style is="custom-style">
-:root {
-	--paper-scroll-header-panel-full-header: {
-		background-image: url(../images/Washington-800-1x.jpg);
-	};
-	--paper-scroll-header-panel-condensed-header: {
-        background-color: #f4b400;
-    };
-
+.tabs-holder {
+	width: 500px;
+	height: 63px;
 }
 
 
-</style>
+
 
 
 

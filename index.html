@@ -29,6 +29,7 @@
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
   <link rel="import" href="bower_components/paper-card/paper-card.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
 
   <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
   <link rel="import" href="bower_components/neon-animation/my-neon-animatable.html">
@@ -45,22 +46,20 @@
 
     <paper-header-panel class="center test">
 
-        <paper-toolbar class="medium-tall">
-          <div id="toolbar-header" class="title bottom vertical layout"></div>
+        <paper-toolbar class="tall">
 
 
 
-          <div class="flex bottom"></div>
 
-          <paper-tabs selected="{{selected}}" class="bottom">
-              <paper-tab>Work</paper-tab>
-              <paper-tab>Education</paper-tab>
-              <paper-tab>Projects</paper-tab>
-              <paper-tab id="mapTab">Map</paper-tab>
-              <paper-tab>Contact</paper-tab>
+
+          <div id="toolbar-header" class="title middle vertical layout"></div>
+          <paper-tabs selected="{{selected}}" class="middle tabs-holder">
+            <paper-tab>Work</paper-tab>
+            <paper-tab>Projects</paper-tab>
+            <paper-tab>Education</paper-tab>
+            <paper-tab id="mapTab">Map</paper-tab>
+            <paper-tab>Contact</paper-tab>
           </paper-tabs>
-
-
 
 
 
@@ -77,27 +76,27 @@
           <neon-animated-pages selected="{{selected}}"> <!-- entry-animation="slide-from-left-animation" exit-animation="slide-right-animation" -->
 
             <my-neon-animatable>
-              <div id="workExperience" class="purple">
+              <div id="workExperience" class="light-bkgrd">
                 <h2>Work Experience</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="projects" class="green">
+              <div id="projects" class="med-bkgrd">
                 <h2>Projects</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="education" class="purple">
+              <div id="education" class="light-bkgrd">
                 <h2>Education</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="mapDiv">
+              <div id="mapDiv" class="med-bkgrd">
                 <h2>Where I've Lived and Worked</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="lets-connect" class="green">
+              <div id="lets-connect" class="light-bkgrd">
                 <lets-connect></lets-connect>
                 <h2 class="orange center-text">Let's Connect</h2>
                 <ul id="footerContacts" class="flex-box">
@@ -123,11 +122,18 @@
       initializeMap();
       console.log("hi there map tab");
     })
+
+
+
+
     document.addEventListener('WebComponentsReady', function() {
         document.querySelector('paper-card').show();
       });
     document.addEventListener('WebComponentsReady', function() {
         document.querySelector('my-neon-animatable').show();
+      });
+    document.addEventListener('WebComponentsReady', function() {
+        document.querySelector('paper-toolbar').show();
       });
 
   </script>
