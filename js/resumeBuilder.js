@@ -181,7 +181,7 @@ $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
 });
 
-$("#main").append(internationalizeButton)
+$("#mid-header").append(internationalizeButton)
 
 function inName() {
 	names = name.split(" ");

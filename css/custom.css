@@ -18,7 +18,7 @@ paper-toolbar.tall {
 	  height: 256px;
 	}
 #mid-header {
-	width: 300px;
+	width: 240px;
 }
 .purple {
 	background-color: purple;
@@ -27,7 +27,15 @@ paper-toolbar.tall {
 .green {
 	background-color: green;
 }
+.test {
+	width: 920px;
+	margin-right: auto;
+	margin-left: auto;
+}
 
+.biopic {
+	border-radius: 150px;
+}
 
 <style is="custom-style">
 :root {
