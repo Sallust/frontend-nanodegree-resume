@@ -55,8 +55,10 @@ Custom property | Description | Default
       cursor: pointer;
 
       @apply(--paper-tab);
-      background-color: #303F9F; /*paperindigo700  */
-      border-radius: 15px 15px 0 0;
+      background-color: #303F9F; /*paperindigo700 border-radius: 15px 15px 0 0; looked tacky */
+
+      font-size: 110%;
+      text-transform: uppercase;
     }
 
     :host(:focus) {
@@ -80,8 +82,9 @@ Custom property | Description | Default
       background-color: #7986CB;  /*paperindigo300  */
     }
 
-    :host(:.iron-selected); {
-      box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+    :host(.iron-selected) {
+
+      background-color: red;
     }
 
 
@@ -90,6 +93,10 @@ Custom property | Description | Default
       font-size: 80%;
     }
 
+    :host:hover > .tab-content {
+      transform: translate(0px, -3px);
+      transition: opacity 2s cubic-bezier(0.4, 0.0, 1, 1) ;
+    }
 
 
 

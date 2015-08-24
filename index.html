@@ -46,14 +46,14 @@
 
     <paper-header-panel class="center test">
 
-        <paper-toolbar class="tall">
+        <paper-toolbar>
 
 
 
 
 
-          <div id="toolbar-header" class="title middle vertical layout"></div>
-          <paper-tabs selected="{{selected}}" class="middle tabs-holder">
+          <div id="toolbar-header" class="title bottom vertical layout"></div>
+          <paper-tabs selected="{{selected}}" class="bottom myfit tabs-holder">
             <paper-tab>Work</paper-tab>
             <paper-tab>Projects</paper-tab>
             <paper-tab>Education</paper-tab>
@@ -107,7 +107,7 @@
         </div>
       </div>
     </paper-header-panel>
-  </template>
+
   <script>           /*   */
     var tabs = document.querySelector('paper-tabs');
     var pages = document.querySelector('neon-animated-pages');
