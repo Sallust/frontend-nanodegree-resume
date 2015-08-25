@@ -36,7 +36,8 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: white; /* color: #999; */
+
   line-height: 29px;
   padding: 10px;
 }
@@ -44,7 +45,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #fff;
   line-height: 22px;
 }
 
@@ -67,7 +68,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f2f2f2;
   line-height: 16px;
   float: left;
 }
@@ -75,7 +76,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #f2f2f2;
   line-height: 16px;
   float: right;
 
@@ -83,12 +84,12 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #dedede;
   line-height: 21px;
 }
 
 a {
-  color: #1199c3;
+  color: #ADCFD9; /*1199c3 */
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -131,7 +132,7 @@ a {
 
 /* TODO: Replace with image later */
 #mid-header {
-  background-color: #1A237E;
+  background-color: #4a4a4a;
 }
 
 .flex-box {

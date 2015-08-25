@@ -17,11 +17,30 @@ body {
 #mid-header {
 	width: 240px;
 }
+#workExperience {
+	background: #0D7689;
+}
 
+#projects {
+	background: #8aae26;
+}
+
+#education {
+	background: #f5684c;
+}
+
+#mapDiv {
+	background: #52cfe2;
+}
+
+#lets-connect {
+	background: #f5a425
+}
 .med-bkgrd {
 	background-color: #FFB74D;
 
 }
+
 
 .light-bkgrd {
 	background-color: #FFA726;
