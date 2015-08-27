@@ -6,7 +6,11 @@ body {
 	margin: 0;
 	background: lightgrey;
 
-	 /*background-image: url(../images/capitol-1020.jpg);*/
+
+	 /*background-image: url(../images/capitol-1020.jpg);text-shadow: 0 0 1px #444444;*/
+}
+.role {
+	color: #0D7689;
 }
 .project-images {
 	width: 150px;
@@ -17,6 +21,11 @@ body {
 #mid-header {
 	width: 240px;
 }
+
+#mid-header {
+  background-color: #777;
+}
+
 #workExperience {
 	background: #0D7689;
 }
@@ -34,7 +43,10 @@ body {
 }
 
 #lets-connect {
-	background: #f5a425
+	background: #E6BC17;
+}
+#lets-connect h2{
+	text-shadow: 2px 2px 2px #444444;
 }
 .med-bkgrd {
 	background-color: #FFB74D;
@@ -79,6 +91,28 @@ body {
 .tabs-holder {
 	width: 500px;
 	height: 63px;
+}
+
+.info-window {
+
+}
+
+.info-title {
+	font-size: 14px;
+	background-color: #0D7689;
+	border-radius: 2px 2px 0 0;
+	color: white;
+	padding: .4em;
+	text-align: center;
+
+}
+
+.info-sub {
+	font-size: 12px;
+	line-height: 10px;
+	color: #111;
+	font-weight: 500;
+	padding: .25em;
 }
 
 
