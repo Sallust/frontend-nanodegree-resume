@@ -59,6 +59,7 @@ Custom property | Description | Default
 
       font-size: 110%;
       text-transform: uppercase;
+      text-shadow: 0 2px 2px #444444;
     }
 
     :host(:focus) {
@@ -86,7 +87,21 @@ Custom property | Description | Default
 
       background-color: red;
     }
-
+    :host(:nth-child(1)) {
+      background: #0D7689;
+    }
+    :host(:nth-child(2)) {
+      background: #8aae26;
+    }
+    :host(:nth-child(3)) {
+      background: #f5684c;
+    }
+    :host(:nth-child(4)) {
+      background: #52cfe2;
+    }
+    :host(:nth-child(5)) {
+      background: #E6BC17;
+    }
 
     :host(:not(.iron-selected)) > .tab-content {
       opacity: 0.8;
@@ -95,9 +110,13 @@ Custom property | Description | Default
 
     :host:hover > .tab-content {
       transform: translate(0px, -3px);
-      transition: opacity 2s cubic-bezier(0.4, 0.0, 1, 1) ;
+      transition: opacity 2s cubic-bezier(0.4, 0.0, 1, 1);
+      transition: transform .2s ;
     }
+    :host > .tab-content {
+      transition: transform 1s ;
 
+    }
 
 
     :host(:focus) .tab-content {
@@ -106,7 +125,7 @@ Custom property | Description | Default
     }
 
     #ink {
-      color: var(--paper-tab-ink, --paper-yellow-a100);
+      color: var(--paper-tab-ink, #9dc82a);
       pointer-events: none;
     }
 
@@ -119,6 +138,7 @@ Custom property | Description | Default
       -webkit-flex-basis: 0.000000001px;
       flex-basis: 0.000000001px;
     }
+
 
   </style>
 

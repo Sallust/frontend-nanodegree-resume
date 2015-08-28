@@ -25,7 +25,7 @@ var work = {
 		{
 			"employer":"Becker Consulting",
 			"title":"Research Associate",
-			"location":"Washington, DC",
+			"location":"M St. Washington, DC",
 			"dates":"Oct 2006-Feb 2007",
 			"description":"Provided client research support through database creation and aggregating scientific, industry and regulatory information."
 		}

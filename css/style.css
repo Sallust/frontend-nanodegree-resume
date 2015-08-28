@@ -28,9 +28,10 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #fff; /* color: #999; */
   line-height: 48px;
   display: inline;
+  text-shadow: 0 2px 2px black;
 }
 
 h2 {
@@ -103,7 +104,7 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #fff;
   display: none;
 }
 
@@ -112,12 +113,12 @@ a {
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #fff; /* actually white now*/
 }
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: #3b3b3b;
 }
 
 .gray {
@@ -131,9 +132,7 @@ a {
 }
 
 /* TODO: Replace with image later */
-#mid-header {
-  background-color: #4a4a4a;
-}
+
 
 .flex-box {
   display: -webkit-flex;
@@ -174,9 +173,7 @@ img {
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
+
 }
 
 @media only screen and (max-width:900px) {
@@ -186,9 +183,6 @@ img {
 }
 
 @media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
   .biopic {
     width: 150px;
   }
