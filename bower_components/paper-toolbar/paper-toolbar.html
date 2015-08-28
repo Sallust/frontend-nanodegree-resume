@@ -90,7 +90,7 @@ be used as the label of the toolbar via `aria-labelledby`.
       -moz-box-sizing: border-box;
 
       /* size */
-      height: 100px;
+      height: 180px;
 
       background: var(--paper-toolbar-background, #4a4a4a);
       color: var(--paper-toolbar-color, --text-primary-color);
@@ -167,6 +167,7 @@ be used as the label of the toolbar via `aria-labelledby`.
       height: 100%;
     }
 
+
     /*
      * make elements (e.g. buttons) respond to mouse/touch events
      *
@@ -186,6 +187,8 @@ be used as the label of the toolbar via `aria-labelledby`.
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      height: 100%;
+      vertical-align: bottom;
 
       /*
        * Polymer/polymer/issues/1525
@@ -223,9 +226,11 @@ be used as the label of the toolbar via `aria-labelledby`.
       right: 0;
       bottom: 0;
 
-      width: 60%;  /*tab width  left: 0; */
+
+        /*tab widthwidth: 60%; ; */
       margin: 0;
-      height: 100%;
+      margin-right: calc((100% - 883px)/2);
+
     }
 
   </style>

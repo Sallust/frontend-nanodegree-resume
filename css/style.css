@@ -27,7 +27,7 @@ h6 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 50px;
   color: #fff; /* color: #999; */
   line-height: 48px;
   display: inline;
@@ -143,7 +143,7 @@ a {
   padding: 10px;
 }
 
-.center-content {
+.center-content {   %%%%%%
   padding: 2.5% 5%;
 }
 
