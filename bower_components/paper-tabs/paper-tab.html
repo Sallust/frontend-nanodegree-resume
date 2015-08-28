@@ -57,9 +57,10 @@ Custom property | Description | Default
       @apply(--paper-tab);
       background-color: #303F9F; /*paperindigo700 border-radius: 15px 15px 0 0; looked tacky */
 
-      font-size: 110%;
+      font-size: 17px;
       text-transform: uppercase;
       text-shadow: 0 2px 2px #444444;
+      transition: opacity .4s cubic-bezier(0.4, 0.0, 1, 1);
     }
 
     :host(:focus) {
@@ -81,9 +82,11 @@ Custom property | Description | Default
 
     :host(:not(.iron-selected)) {
       background-color: #7986CB;  /*paperindigo300  */
+      box-shadow: inset 0px -5px 6px -3px rgba(0, 0, 0, 0.4);
     }
 
     :host(.iron-selected) {
+
 
       background-color: red;
     }
@@ -103,18 +106,28 @@ Custom property | Description | Default
       background: #E6BC17;
     }
 
+    :host(:not(.iron-selected)) {
+      opacity: 0.7;
+
+    }
+
     :host(:not(.iron-selected)) > .tab-content {
-      opacity: 0.8;
+
       font-size: 80%;
     }
 
     :host:hover > .tab-content {
       transform: translate(0px, -3px);
-      transition: opacity 2s cubic-bezier(0.4, 0.0, 1, 1);
+
       transition: transform .2s ;
     }
     :host > .tab-content {
-      transition: transform 1s ;
+      transition: transform .5s ;
+
+    }
+    :host:hover:not(.iron-selected) {
+      opacity: .9;
+      ;
 
     }
 
@@ -125,7 +138,7 @@ Custom property | Description | Default
     }
 
     #ink {
-      color: var(--paper-tab-ink, #9dc82a);
+      color: var(--paper-tab-ink, rgba(200,200,200,0.75));
       pointer-events: none;
     }
 
