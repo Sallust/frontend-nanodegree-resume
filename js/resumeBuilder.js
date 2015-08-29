@@ -25,7 +25,7 @@ var work = {
 		{
 			"employer":"Becker Consulting",
 			"title":"Research Associate",
-			"location":"Washington, DC",
+			"location":"M St. Washington, DC",
 			"dates":"Oct 2006-Feb 2007",
 			"description":"Provided client research support through database creation and aggregating scientific, industry and regulatory information."
 		}
@@ -106,14 +106,14 @@ bio.display = function() {
 		window['formatted' + capital(contact)] = HTMLcontactGeneric.replace("%contact%",contact).replace("%data%",bio.contacts[contact]);
 	}  //Creation of formattedContact variables using HTMLcontactGeneric
 
-	$("#header").prepend(formattedName,formattedRole);
-	$("#header").append(formattedPicture,formattedWelcome);
+	$("#toolbar-header").prepend(formattedName,formattedRole);
+	$("#mid-header").append(formattedPicture,formattedWelcome);
 
 	$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub);
 	$("#footerContacts").append(formattedMobile,formattedTwitter)
 
 	if (bio.skills) {
-		$("#header").append(HTMLskillsStart);
+		$("#mid-header").append(HTMLskillsStart);
 	}
 	for (skill in bio.skills) {
 		var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill])
@@ -181,7 +181,7 @@ $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
 });
 
-$("#main").append(internationalizeButton)
+$("#mid-header").append(internationalizeButton)
 
 function inName() {
 	names = name.split(" ");

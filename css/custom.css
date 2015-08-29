@@ -1,6 +1,204 @@
 /* Custom CSS styles */
 
+html,
+body {
+	height: 100%;
+	margin: 0;
+	background: #4a4a4a;
+
+
+	 /*background-image: url(../images/capitol-1020.jpg);text-shadow: 0 0 1px #444444;*/
+}
+.role {
+	color: #0D7689;
+}
 .project-images {
 	width: 150px;
 	height: 150px;
 }
+
+.title {
+	padding: 100px 0 0 0;
+	-webkit-transform-origin: left bottom;
+      transform-origin: left bottom;
+      transition: transform .5s ease-in;
+}
+
+
+#mid-header {
+  background-color: #777;
+}
+
+#workExperience {
+	background: #0D7689;
+}
+
+#projects {
+	background: #8aae26;
+}
+
+#education {
+	background: #f5684c;
+}
+
+#mapDiv {
+	background: #52cfe2;
+}
+
+#lets-connect {
+	background: #E6BC17;
+}
+#lets-connect h2{
+	text-shadow: 2px 2px 2px #444444;
+}
+.med-bkgrd {
+	background-color: #FFB74D;
+
+}
+
+
+.light-bkgrd {
+	background-color: #FFA726;
+
+}
+
+.purple {
+	background-color: purple;
+}
+
+.green {
+	background-color: green;
+}
+
+.future-class {
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+              0  6px 30px 5px rgba(0, 0, 0, 0.12),
+              0  8px 10px -5px rgba(0, 0, 0, 0.4),
+              0 -16px 24px 2px rgba(0, 0, 0, 0.14),
+              0  -6px 30px 5px rgba(0, 0, 0, 0.12),
+              0  -8px 10px -5px rgba(0, 0, 0, 0.4);
+
+
+}
+
+.page-center {
+	max-width: 1020px;
+
+	width: 920px;
+	height: 600px;
+	margin: auto;
+
+}
+
+.biopic {
+	border-radius: 150px;
+}
+
+#mid-header {
+	width: 300px;
+}
+
+.under-header-body {
+	width: 900px;
+	margin: auto;
+}
+
+.tabs-holder {
+	width: 600px;
+
+}
+.under-tab {
+	width: 600px;
+}
+.info-window {
+
+}
+
+.info-title {
+	font-size: 14px;
+	background-color: #0D7689;
+	border-radius: 2px 2px 0 0;
+	color: white;
+	padding: .4em;
+	text-align: center;
+
+}
+
+.info-sub {
+	font-size: 12px;
+	line-height: 10px;
+	color: #111;
+	font-weight: 500;
+	padding: .25em;
+}
+
+<style is="custom-style">
+paper-toolbar {
+
+--paper-toolbar-background: #7d7e7d; /* Old browsers */
+--paper-toolbar-background: -moz-linear-gradient(top,  #7d7e7d 0%, #7d7e7d 18%, #0e0e0e 100%); /* FF3.6+ */
+--paper-toolbar-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(18%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
+--paper-toolbar-background: -webkit-linear-gradient(top,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+--paper-toolbar-background: -ms-linear-gradient(top,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%); /* IE10+ */
+--paper-toolbar-background: linear-gradient(to bottom,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%); /* W3C */
+
+
+}
+
+
+
+
+
+</style>
+
+@muedia screen and (min-width: 1060px) {        /*formating and background for large displays */
+	body {
+		width: 1060px;
+		margin: 0 auto 0 auto;
+	}
+	html {
+		background: grey;  /*fallback*/
+		background: url(../images/dc-lion2-1020.jpg) no-repeat top left fixed,
+		url(../images/capitol-1020.jpg) no-repeat top right fixed;
+	}
+
+
+
+
+
+
+/*
+.paper-scroll-header-panel-0 #headerBg.paper-scroll-header-panel {
+	background-color: green;
+}
+
+.paper-scroll-header-panel-0 #condensedHeaderBg.paper-scroll-header-panel {
+  background-color: orange;
+}
+/*
+paper-scroll-header-panel {
+	background-color: var(grey, #eee);
+	--paper-scroll-header-panel-condensed-header: {
+        background-color: var(orange, #ff5722);
+      };
+	--paper-scroll-header-panel-full-header: {
+        background-image: url(../images/movies.jpg);
+      };
+}
+
+
+
+
+background-color: var(--paper-scroll-header-panel-full-header, green);
+
+paper-scroll-header-panel {
+      --paper-scroll-header-panel-full-header: {
+        background-color: red;
+      };
+    }
+
+paper-scroll-header-panel {
+      --paper-scroll-header-panel-condensed-header: {
+        background-color: #f4b400;
+      };
+    }
