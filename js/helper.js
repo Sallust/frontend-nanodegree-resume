@@ -24,7 +24,7 @@ var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLwelcomeMsg = '<div class="welcome-message">%data%</div><hr>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
@@ -201,6 +201,33 @@ function initializeMap() {
 //window.addEventListener('load', initializeMap);
 
 window.addEventListener('resize', function(e) {
+  betterTransition();
+
   map.fitBounds(mapBounds);
+
 });
+
+function betterTransition() {        //Handles when user is looking at bio page and resizes window
+  if (pages.selected == 0 && window.innerWidth>500) {
+    pages.selected = 1
+  }
+
+}
+
+/*
+function mobileResize() {
+  if (window.innerWidth<500) {
+
+    $(".role").remove();
+
+
+    //$("paper-tabs").prepend(HTMLbioTab);
+
+  }
+  else {
+    $(".role").text("Super Ninja")
+  }
+}
+
+*/
 

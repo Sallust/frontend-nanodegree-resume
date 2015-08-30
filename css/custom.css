@@ -4,18 +4,10 @@ html,
 body {
 	height: 100%;
 	margin: 0;
-	background: #4a4a4a;
+	background: #0e0e0e;
+}
 
-
-	 /*background-image: url(../images/capitol-1020.jpg);text-shadow: 0 0 1px #444444;*/
-}
-.role {
-	color: #0D7689;
-}
-.project-images {
-	width: 150px;
-	height: 150px;
-}
+/* HEADER */
 
 .title {
 	padding: 100px 0 0 0;
@@ -23,6 +15,18 @@ body {
       transform-origin: left bottom;
       transition: transform .5s ease-in;
 }
+.role {
+	color: #0D7689;
+}
+
+
+
+.project-images {
+	width: 150px;
+	height: 150px;
+}
+
+
 
 
 #mid-header {
@@ -31,6 +35,7 @@ body {
 
 #workExperience {
 	background: #0D7689;
+	height: 100vh;
 }
 
 #projects {
@@ -39,10 +44,12 @@ body {
 
 #education {
 	background: #f5684c;
+
 }
 
 #mapDiv {
 	background: #52cfe2;
+	height: 100vh;
 }
 
 #lets-connect {
@@ -55,20 +62,13 @@ body {
 	background-color: #FFB74D;
 
 }
-
-
-.light-bkgrd {
-	background-color: #FFA726;
-
+hr {
+	width: 85%;
 }
 
-.purple {
-	background-color: purple;
-}
 
-.green {
-	background-color: green;
-}
+
+
 
 .future-class {
 	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
@@ -92,6 +92,14 @@ body {
 
 .biopic {
 	border-radius: 150px;
+	width: 150px;
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 8px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 3px -2px rgba(0, 0, 0, 0.4);
+}
+.welcome-message {
+
+	padding: 20px 5px 20px 5px;
 }
 
 #mid-header {
@@ -131,6 +139,117 @@ body {
 	font-weight: 500;
 	padding: .25em;
 }
+.donut-container {
+  			font: 12px sans-serif;
+  			width: 200px;
+
+  			margin: 20px auto;
+  			padding: 0 0 80px 0;
+  			color: #fff;
+
+		}
+
+
+@media screen and (max-width: 920px) {        /*formating and background for large displays */
+	#mid-header {
+		width: 250px;
+	}
+	.biopic {
+		width: 100px;
+	}
+	.tabs-holder,
+	.under-tab {
+		width: calc(100% - 250px)
+	}
+	.under-header-body {
+		width: 100%;
+	}
+	h1 {
+		font-size: 35px;
+	}
+	.role {
+		font-size: 15px;
+	}
+	.welcome-message {
+		padding: 5px;
+	}
+}
+
+@media screen and (max-width: 639px) {
+    #toolbar-header{
+        padding: 40px 0 0 0;
+        margin: 0;
+    }
+
+    #mid-header {
+      	width: 200px;
+    }
+
+    .tabs-holder,
+	.under-tab {
+		width: calc(100% - 200px)
+	}
+	h1 {
+		font-size: 32px;
+	}
+	.role {
+		font-size: 13px;
+	}
+	.biopic {
+		display: block;
+		margin: 0 auto 20px auto;
+		float: none;
+		transform: translateY(20px);
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	#toolbar-header{
+        padding: 0;
+    }
+
+    .tabs-holder,
+    .under-tab,
+    #mid-header {
+    	width: 100%
+    }
+
+    #stationary-content {
+    	display:none;
+    }
+
+    .biopic {
+    	float: left;
+    	transform: none;
+    	width: 130px;
+    	margin: 20px;
+    	 }
+
+    .welcome-message {
+    	font-size: 25px;
+    	padding: 30px 5px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 <style is="custom-style">
 paper-toolbar {
@@ -151,16 +270,6 @@ paper-toolbar {
 
 </style>
 
-@muedia screen and (min-width: 1060px) {        /*formating and background for large displays */
-	body {
-		width: 1060px;
-		margin: 0 auto 0 auto;
-	}
-	html {
-		background: grey;  /*fallback*/
-		background: url(../images/dc-lion2-1020.jpg) no-repeat top left fixed,
-		url(../images/capitol-1020.jpg) no-repeat top right fixed;
-	}
 
 
 

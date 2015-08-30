@@ -8,7 +8,7 @@ var bio = {
 		"twitter" : "@SallustV",
 		"location" : "Washington, DC"
 	},
-	"welcome" : "Welcome to the awesomness that is my resume",
+	"welcome" : '"Welcome to the awesomness that is my resume"',
 	"pictureURL" : "images/me.jpg",
 	"skills" : ["awesomness","amazingness","JS","HTML","CSS"]
  }
@@ -107,13 +107,13 @@ bio.display = function() {
 	}  //Creation of formattedContact variables using HTMLcontactGeneric
 
 	$("#toolbar-header").prepend(formattedName,formattedRole);
-	$("#mid-header").append(formattedPicture,formattedWelcome);
+	$(".bio-page").prepend(formattedPicture,formattedWelcome);
 
-	$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub);
+	$(".topContacts").append(formattedMobile,formattedEmail,formattedGithub);
 	$("#footerContacts").append(formattedMobile,formattedTwitter)
 
 	if (bio.skills) {
-		$("#mid-header").append(HTMLskillsStart);
+		$(".topContacts").after(HTMLskillsStart);
 	}
 	for (skill in bio.skills) {
 		var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill])
@@ -195,3 +195,4 @@ $("#mapDiv").append(googleMap)
 function capital (str) {
 	return str[0].toUpperCase()+str.substr(1);
 }
+
