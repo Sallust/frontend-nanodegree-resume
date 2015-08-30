@@ -90,21 +90,25 @@ Custom property | Description | Default
 
       background-color: red;
     }
-    :host(:nth-child(1)) {
+    :host(:nth-child(2)) {
       background: #0D7689;
     }
-    :host(:nth-child(2)) {
+    :host(:nth-child(3)) {
       background: #8aae26;
     }
-    :host(:nth-child(3)) {
+    :host(:nth-child(4)) {
       background: #f5684c;
     }
-    :host(:nth-child(4)) {
+    :host(:nth-child(5)) {
       background: #52cfe2;
     }
-    :host(:nth-child(5)) {
+    :host(:nth-child(6)) {
       background: #E6BC17;
     }
+    :host(:nth-child(1)) {
+      background: #777;
+    }
+
 
     :host(:not(.iron-selected)) {
       opacity: 0.7;
@@ -150,6 +154,19 @@ Custom property | Description | Default
       flex: 1;
       -webkit-flex-basis: 0.000000001px;
       flex-basis: 0.000000001px;
+    }
+
+    @media screen and (max-width: 639px) {
+      :host {
+        font-size: 12px;
+
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      :host(#bio-tab) {
+        display: none;
+      }
     }
 
 

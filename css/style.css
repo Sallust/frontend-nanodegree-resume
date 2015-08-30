@@ -153,13 +153,13 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
 
-  display: none;
+
+
 }
 
 img {
-  padding: 10px;
+  margin: 10px;
 }
 
 #mid-header span {
@@ -172,24 +172,6 @@ img {
 
 /* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-
-}
-
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-}
 
 #map {
   display: block;

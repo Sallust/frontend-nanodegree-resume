@@ -21,33 +21,33 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <style is="custom-style">
     paper-radio-button {
-
-
+      display: block;
+      margin-bottom: 40px;
     }
 
     paper-radio-button.blue {
-      --paper-radio-button-checked-color:#0D7689;
+      --paper-radio-button-checked-color: var(--paper-light-blue-500);
       --paper-radio-button-checked-ink-color: var(--paper-light-blue-500);
       --paper-radio-button-unchecked-color: var(--paper-light-blue-900);
       --paper-radio-button-unchecked-ink-color: var(--paper-light-blue-900);
     }
 
     paper-radio-button.red {
-      --paper-radio-button-checked-color: #E6BC17;
+      --paper-radio-button-checked-color: var(--paper-red-500);
       --paper-radio-button-checked-ink-color: var(--paper-red-500);
       --paper-radio-button-unchecked-color: var(--paper-red-900);
       --paper-radio-button-unchecked-ink-color: var(--paper-red-900);
     }
 
     paper-radio-button.green {
-      --paper-radio-button-checked-color: #8aae26;
+      --paper-radio-button-checked-color: var(--paper-green-500);
       --paper-radio-button-checked-ink-color: var(--paper-green-500);
       --paper-radio-button-unchecked-color: var(--paper-green-900);
       --paper-radio-button-unchecked-ink-color: var(--paper-green-900);
     }
 
     paper-radio-button.orange {
-      --paper-radio-button-checked-color: #f5684c;
+      --paper-radio-button-checked-color: var(--paper-orange-500);
       --paper-radio-button-checked-ink-color: var(--paper-orange-500);
       --paper-radio-button-unchecked-color: var(--paper-orange-900);
       --paper-radio-button-unchecked-ink-color: var(--paper-orange-900);
@@ -56,29 +56,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved>
   <div class="horizontal-section-container">
+    <div>
+      <h4>Enabled</h4>
+      <div class="horizontal-section">
+        <paper-radio-button>Oxygen</paper-radio-button>
+        <paper-radio-button>Carbon</paper-radio-button>
+        <paper-radio-button checked>Hydrogen</paper-radio-button>
+        <paper-radio-button checked>Nitrogen</paper-radio-button>
+        <paper-radio-button checked>Calcium</paper-radio-button>
+      </div>
+    </div>
 
+    <div>
+      <h4>Disabled</h4>
+      <div class="horizontal-section">
+        <paper-radio-button disabled>Oxygen</paper-radio-button>
+        <paper-radio-button disabled>Carbon</paper-radio-button>
+        <paper-radio-button checked disabled>Hydrogen</paper-radio-button>
+        <paper-radio-button checked disabled>Nitrogen</paper-radio-button>
+        <paper-radio-button checked disabled>Calcium</paper-radio-button>
+      </div>
+    </div>
 
     <div>
       <h4>Color</h4>
       <div class="horizontal-section">
-        <paper-radio-button class="blue" checked></paper-radio-button>
-        <paper-radio-button class="red" checked></paper-radio-button>
-        <paper-radio-button class="orange" checked></paper-radio-button>
-        <paper-radio-button class="green" checked></paper-radio-button>
-        <paper-radio-button class="blue" checked>Calcium</paper-radio-button>
-      </div>
-      <div class="horizontal-section">
-        <paper-radio-button class="blue" checked></paper-radio-button>
-        <paper-radio-button class="red" checked></paper-radio-button>
-        <paper-radio-button class="orange" checked></paper-radio-button>
-        <paper-radio-button class="green" checked></paper-radio-button>
-        <paper-radio-button class="blue" checked>Calcium</paper-radio-button>
-      </div>
-      <div class="horizontal-section">
-        <paper-radio-button class="blue" checked></paper-radio-button>
-        <paper-radio-button class="red" checked></paper-radio-button>
-        <paper-radio-button class="orange" checked></paper-radio-button>
-        <paper-radio-button class="green" checked></paper-radio-button>
+        <paper-radio-button class="blue" checked>Oxygen</paper-radio-button>
+        <paper-radio-button class="red" checked>Carbon</paper-radio-button>
+        <paper-radio-button class="orange" checked>Hydrogen</paper-radio-button>
+        <paper-radio-button class="green" checked>Nitrogen</paper-radio-button>
         <paper-radio-button class="blue" checked>Calcium</paper-radio-button>
       </div>
     </div>

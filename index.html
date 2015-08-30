@@ -39,7 +39,7 @@
   <link rel="import" href="elements/lets-connect.html">
 
   <link rel="import" href="elements/language-radio-chart.html">
-  <link rel="import" href="elements/donut-chart.html">
+
 
 
 
@@ -58,6 +58,8 @@
 
           <div id="toolbar-header" class="title bottom vertical layout"></div>
           <paper-tabs selected="{{selected}}" align-bottom class="bottom myfit tabs-holder">
+            <paper-tab id="bio-tab">Bio</paper-tab>
+
             <paper-tab>Work</paper-tab>
             <paper-tab>Projects</paper-tab>
             <paper-tab>Education</paper-tab>
@@ -69,18 +71,27 @@
 
         </paper-toolbar>
         <div class="horizontal layout under-header-body future-class">
-          <paper-card>
-            <div id="mid-header" class="clear-fix">
-              <ul id="topContacts" class="flex-box"></ul>
+          <paper-card id="stationary-content">
+            <div id="mid-header" class="clear-fix bio-page">
+              <ul id="topContacts" class="flex-box topContacts"></ul>
               <language-radio-chart></language-radio-chart>
-              <donut-chart></donut-chart>
+              <div id="donut" class="donut-container"><h4>Programming Skills</h4></div>
             </div>
 
           </paper-card>
 
           <div class="under-tab">
           <neon-animated-pages selected="{{selected}}"> <!-- entry-animation="slide-from-left-animation" exit-animation="slide-right-animation" -->
+            <my-neon-animatable>
 
+              <div id="mid-header" class="bio-page mobile-bio-page">
+                <ul id="topContacts" class="flex-box topContacts"></ul>
+                <language-radio-chart></language-radio-chart>
+                <div id="donut2" class="donut-container"><h4>Programming Skills</h4></div>
+              </div>
+
+
+            </my-neon-animatable>
             <my-neon-animatable>
               <div id="workExperience">
                 <h2>Work Experience</h2>
@@ -102,7 +113,7 @@
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="lets-connect" class="light-bkgrd">
+              <div id="lets-connect">
                 <h2 class="center-text">Let's Connect</h2>
                 <lets-connect></lets-connect>
 
@@ -118,7 +129,13 @@
   <script>           /*   */
     var tabs = document.querySelector('paper-tabs');
     var pages = document.querySelector('neon-animated-pages');
-    pages.selected=0;   /* initially set selected to bio tab */
+    if (window.innerWidth<500) {
+      pages.selected=0;
+    }
+    else {
+      pages.selected=1;
+    }
+       /* initially set selected to work tab */
 
     tabs.addEventListener('iron-select',function(){
     pages.selected = tabs.selected;
@@ -145,8 +162,15 @@
   </script>
 
   <script src="js/resumeBuilder.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="js/makeDonut.js"></script>
+
+
+
 
   <script type="text/javascript">
+      makeDonut("elements/data.csv","#donut");
+      makeDonut("elements/data.csv","#donut2");
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
@@ -179,6 +203,10 @@
 
       Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
     });
+
+
+
+
 
 
   </script>

@@ -124,7 +124,7 @@ be used as the label of the toolbar via `aria-labelledby`.
 
     @media (max-width: 639px) {
       :host {
-        height: 56px;
+        height: 100px;
       }
 
       :host(.medium-tall) {
@@ -138,6 +138,7 @@ be used as the label of the toolbar via `aria-labelledby`.
       .toolbar-tools {
         height: 56px;
       }
+
     }
 
     #topBar {
@@ -232,6 +233,17 @@ be used as the label of the toolbar via `aria-labelledby`.
       margin-right: calc((100% - 883px)/2);
 
     }
+    @media screen and (max-width: 920px) {
+      .toolbar-tools > ::content > .myfit {
+        margin: 0;
+      }
+    }
+    @media (max-width: 500px) {
+      :host {
+        height: 120px;
+      }
+
+
 
   </style>
 
