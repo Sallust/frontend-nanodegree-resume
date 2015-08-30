@@ -4,10 +4,10 @@ html,
 body {
 	height: 100%;
 	margin: 0;
-	background: #4a4a4a;
+	background: #0e0e0e;
 
 
-	 /*background-image: url(../images/capitol-1020.jpg);text-shadow: 0 0 1px #444444;*/
+	 /*#4a4a4abackground-image: url(../images/capitol-1020.jpg);text-shadow: 0 0 1px #444444;*/
 }
 .role {
 	color: #0D7689;
@@ -55,6 +55,9 @@ body {
 	background-color: #FFB74D;
 
 }
+hr {
+	width: 85%;
+}
 
 
 .light-bkgrd {
@@ -62,13 +65,8 @@ body {
 
 }
 
-.purple {
-	background-color: purple;
-}
 
-.green {
-	background-color: green;
-}
+
 
 .future-class {
 	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
@@ -92,6 +90,11 @@ body {
 
 .biopic {
 	border-radius: 150px;
+	width: 150px;
+}
+.welcome-message {
+	height: 130px;
+	padding: 20px 5px 20px 5px;
 }
 
 #mid-header {

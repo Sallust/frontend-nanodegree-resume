@@ -1,0 +1,118 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+<link rel="import" href="../bower_components/paper-styles/default-theme.html">
+<link rel="import" href="../bower_components/paper-behaviors/paper-inky-focus-behavior.html">
+<link rel="import" href="../bower_components/paper-radio-button/paper-radio-button.html">
+<script src="../js/jQuery.js"></script>
+<link rel="import" type="css" href="../bower_components/paper-radio-button/paper-radio-button.css">
+
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.min.js">
+    </script>
+
+<dom-module id="language-radio-chart">
+<style>
+	paper-radio-button.teal {
+      		--paper-radio-button-checked-color: #0D7689;
+      		--paper-radio-button-checked-ink-color: #0D7689;
+      		}
+	paper-radio-button.green {
+      		--paper-radio-button-checked-color: #8aae26;
+      		--paper-radio-button-checked-ink-color: #8aae26;
+      		}
+	paper-radio-button.orange {
+      		--paper-radio-button-checked-color: #f5684c;
+      		--paper-radio-button-checked-ink-color: #f5684c;
+      		}
+	paper-radio-button.blue {
+      		--paper-radio-button-checked-color: #52cfe2;
+      		--paper-radio-button-checked-ink-color: #52cfe2;
+      		}
+    paper-radio-button.yellow {
+      		--paper-radio-button-checked-color: #E6BC17;
+      		--paper-radio-button-checked-ink-color: #E6BC17;
+      		}
+</style>
+
+	<template>
+		<style>
+		:host {
+			margin: 0 auto 0 auto;
+		}
+		.levOne >.two,
+		.levOne >.three,
+		.levOne >.four,
+		.levOne >.five {
+			opacity: .2;
+		}
+
+		.levTwo >.three,
+		.levTwo >.four,
+		.levTwo >.five {
+			opacity: .2;
+		}
+
+		.levThree >.four,
+		.levThree >.five {
+			opacity: .2;
+		}
+
+		.levFour > .five{
+			opacity:  .2;
+		}
+
+		.chart-container {
+			width: 200px;
+			margin: 0 auto;
+
+		}
+		h4 {
+			text-align: center;
+		}
+
+		</style>
+		<div class="chart-container">
+			<h4>Language Skills</h4>
+
+			<template is="dom-repeat" items="{{languages}}">
+
+				<div class="button-row" class$="{{item.skill}}">
+					<paper-radio-button class="orange five" checked></paper-radio-button>
+        			<paper-radio-button class="yellow four" checked></paper-radio-button>
+        			<paper-radio-button class="green three" checked='null'></paper-radio-button>
+        			<paper-radio-button class="teal two" checked></paper-radio-button>
+        			<paper-radio-button class="blue one" checked>{{item.lang}}</paper-radio-button>
+
+        		</div>
+
+
+        	</template>
+        </div>
+    </template>
+</dom-module>
+
+<script type="text/javascript">
+	Polymer({
+		is: 'language-radio-chart',
+
+		ready: function() {
+			this.languages = [
+				{lang: "Spanish" , skill: 'levFour'},
+				{lang: "English" , skill: 'levFive'},
+				{lang: "Portuguese" , skill: 'levOne'},
+				{lang: "Tigrinya" , skill: 'levTwo'},
+				{lang: "Latin", skill: 'levThree'}
+			];
+		},
+
+
+	});
+
+
+
+
+</script>
+
+
+
+
+

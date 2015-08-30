@@ -107,13 +107,13 @@ bio.display = function() {
 	}  //Creation of formattedContact variables using HTMLcontactGeneric
 
 	$("#toolbar-header").prepend(formattedName,formattedRole);
-	$("#mid-header").append(formattedPicture,formattedWelcome);
+	$("#mid-header").prepend(formattedPicture,formattedWelcome);
 
 	$("#topContacts").append(formattedMobile,formattedEmail,formattedGithub);
 	$("#footerContacts").append(formattedMobile,formattedTwitter)
 
 	if (bio.skills) {
-		$("#mid-header").append(HTMLskillsStart);
+		$("#topContacts").after(HTMLskillsStart);
 	}
 	for (skill in bio.skills) {
 		var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill])

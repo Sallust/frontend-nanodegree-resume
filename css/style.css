@@ -15,7 +15,7 @@ h6 {
 }
 
 .clear-fix {
-  height: 500px;
+
   /*overflow: auto;/*/
 }
 
@@ -109,7 +109,7 @@ a {
 }
 
 .orange {
-  background-color: #f5ae23;
+ /* actually white now background-color: #f5ae23;*/
 }
 
 .orange-text {
@@ -154,7 +154,7 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+
   display: none;
 }
 
