@@ -23,11 +23,25 @@ var work = {
 			"description":"Made the store amazing using my intrinsic awesomeness"
 		},
 		{
+			"employer":"Banana Republic",
+			"title":"Merchandising Manager",
+			"location":"Chevy Chase, MD",
+			"dates":"Feb 2008-Oct 2009",
+			"description": "Provided client research support through database creation and aggregating scientific, industry and regulatory information."
+		},
+		{
 			"employer":"Becker Consulting",
 			"title":"Research Associate",
 			"location":"M St. Washington, DC",
 			"dates":"Oct 2006-Feb 2007",
-			"description":"Provided client research support through database creation and aggregating scientific, industry and regulatory information."
+			"description": "Provided client research support through database creation and aggregating scientific, industry and regulatory information."
+		},
+		{
+			"employer":"Wells Fargo",
+			"title":"Intern",
+			"location":"San Francisco, CA",
+			"dates":"Summer 2004",
+			"description": " Underwrote equity-equivalent investments to qualifying non-profit agencies with assets up to $40 million."
 		}
 	]
 }
