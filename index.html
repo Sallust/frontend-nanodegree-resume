@@ -1,154 +1,124 @@
 <!DOCTYPE html>
-
-
 <head>
   <meta charset="utf-8">
-
   <title>Resume</title>
     <!--STYLE-->
   <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
-
+  <link rel="import" href="css/custom-polymer.css">
+    <!--jQuery-->
   <script src="js/jQuery.js"></script>
   <script src="js/helper.js"></script>
-
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
-
-
+    <!--Polymer Script-->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <!--googlemap script-->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
-
   <meta name="viewport" content="width=device-width">
-
-
-
+    <!--Polymer-->
   <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html"> <!-- import layout attributes classes -->
   <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-  <link rel="import" href="bower_components/iron-pages/iron-pages.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
   <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
   <link rel="import" href="bower_components/paper-card/paper-card.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
-
   <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
-  <link rel="import" href="bower_components/neon-animation/my-neon-animatable.html">
   <link rel="import" href="bower_components/neon-animation/neon-animations.html">
-  <link rel="import" href="css/custom.css">
-
+    <!--Custom Polymer Elements-->
+  <link rel="import" href="bower_components/neon-animation/my-neon-animatable.html">
   <link rel="import" href="elements/lets-connect.html">
-
   <link rel="import" href="elements/language-radio-chart.html">
-
-
-
-
 </head>
 <body id="main" class="fullbleed layout horizontal">
-
-
-
-    <paper-scroll-header-panel condenses keep-condensed-header condensed-header-height="100"class="flex">
-
-        <paper-toolbar>
-
-
-
-
-
-          <div id="toolbar-header" class="title bottom vertical layout"></div>
-          <paper-tabs selected="{{selected}}" align-bottom class="bottom myfit tabs-holder">
-            <paper-tab id="bio-tab">Bio</paper-tab>
-
-            <paper-tab>Work</paper-tab>
-            <paper-tab>Projects</paper-tab>
-            <paper-tab>Education</paper-tab>
-            <paper-tab id="mapTab">Map</paper-tab>
-            <paper-tab>Contact</paper-tab>
-          </paper-tabs>
-
-
-
-        </paper-toolbar>
-        <div class="horizontal layout under-header-body future-class">
-          <paper-card id="stationary-content">
-            <div id="mid-header" class="clear-fix bio-page">
-              <ul id="topContacts" class="flex-box topContacts"></ul>
-              <language-radio-chart></language-radio-chart>
-              <div id="donut" class="donut-container"><h4>Programming Skills</h4></div>
+  <paper-scroll-header-panel condenses keep-condensed-header condensed-header-height="100" class="flex">
+              <!--Toolbar: Houses tabs, Name & Role-->
+    <paper-toolbar>
+      <div id="toolbar-header" class="title bottom vertical layout"></div>
+      <paper-tabs selected="{{selected}}" align-bottom class="bottom myfit tabs-holder">
+        <paper-tab id="bio-tab">Bio</paper-tab>
+        <paper-tab>Work</paper-tab>
+        <paper-tab>Projects</paper-tab>
+        <paper-tab>Education</paper-tab>
+        <paper-tab id="mapTab">Map</paper-tab>
+        <paper-tab>Contact</paper-tab>
+      </paper-tabs>
+    </paper-toolbar>
+      <div class="horizontal layout under-header-body">
+                <!--Remaining Header Items: BioPic, Contact, Skills. Added 2 skill graphs one via polymer other using d3-->
+        <paper-card id="stationary-content">
+          <div id="mid-header" class="bio-page">
+            <ul id="topContacts" class="flex-box topContacts"></ul>
+            <language-radio-chart></language-radio-chart>
+            <div id="donut" class="donut-container">
+              <h4>Programming Skills</h4>
             </div>
-
-          </paper-card>
-
-          <div class="under-tab">
-          <neon-animated-pages selected="{{selected}}"> <!-- entry-animation="slide-from-left-animation" exit-animation="slide-right-animation" -->
+          </div>
+        </paper-card>
+                  <!--Under Tabs: Tabs for Work, Projects, Education, Map, and Contact-->
+        <div class="under-tab">
+          <neon-animated-pages selected="{{selected}}">
             <my-neon-animatable>
-
+                      <!--Header items again: becomes a tab-able item for small screens; default is display:none-->
               <div id="mid-header" class="bio-page mobile-bio-page">
                 <ul id="topContacts" class="flex-box topContacts"></ul>
                 <language-radio-chart></language-radio-chart>
-                <div id="donut2" class="donut-container"><h4>Programming Skills</h4></div>
+                <div id="donut2" class="donut-container">
+                  <h4>Programming Skills</h4>
+                </div>
               </div>
-
-
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="workExperience">
+              <div id="workExperience" class="tab-div">
                 <h2>Work Experience</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="projects">
+              <div id="projects" class="tab-div">
                 <h2>Projects</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="education">
+              <div id="education" class="tab-div">
                 <h2>Education</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="mapDiv">
+              <div id="mapDiv" class="tab-div">
                 <h2>Where I've Lived and Worked</h2>
               </div>
             </my-neon-animatable>
             <my-neon-animatable>
-              <div id="lets-connect">
+              <div id="lets-connect" class="tab-div">
                 <h2 class="center-text">Let's Connect</h2>
                 <lets-connect></lets-connect>
-
-                <ul id="footerContacts" class="flex-box">
-                </ul>
               </div>
             </my-neon-animatable>
           </neon-animated-pages>
         </div>
       </div>
+      <footer>
+        <ul id="footerContacts" class="flex-box"></ul>
+      </footer>
     </paper-scroll-header-panel>
 
-  <script>           /*   */
+  <script>           /*Tabs Scripts   */
     var tabs = document.querySelector('paper-tabs');
     var pages = document.querySelector('neon-animated-pages');
     if (window.innerWidth<500) {
-      pages.selected=0;
+      pages.selected=0;    /*Opens to Header Tab on small screens */
     }
     else {
-      pages.selected=1;
+      pages.selected=1;       /* otherwise opens to work tab */
     }
-       /* initially set selected to work tab */
 
     tabs.addEventListener('iron-select',function(){
     pages.selected = tabs.selected;
-
     });
 
     $("#mapTab").click(function() {   //new click event (tab-click vs page load) on which to initialize Map
       initializeMap();
     })
-
-
-
-
+                 /* Opening Animation */
     document.addEventListener('WebComponentsReady', function() {
         document.querySelector('paper-card').show();
       });
@@ -160,14 +130,11 @@
       });
 
   </script>
-
   <script src="js/resumeBuilder.js"></script>
+    <!--D3 Script-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <!--Script including the actual function to make the chart-->
   <script src="js/makeDonut.js"></script>
-
-
-
-
   <script type="text/javascript">
       makeDonut("elements/data.csv","#donut");
       makeDonut("elements/data.csv","#donut2");
@@ -194,7 +161,7 @@
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.backgroundColor = "black";
     }
-
+      //Shrinks Title on scroll
     var title = document.querySelector('.title');
     addEventListener('paper-header-transform', function(e) {
       var d = e.detail;
@@ -203,13 +170,6 @@
 
       Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
     });
-
-
-
-
-
-
   </script>
-
 </body>
 </html>

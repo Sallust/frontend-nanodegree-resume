@@ -30,7 +30,7 @@ var work = {
 			"description": "Provided client research support through database creation and aggregating scientific, industry and regulatory information."
 		},
 		{
-			"employer":"Becker Consulting",
+			"employer":"Becker & Associates Consulting Inc",
 			"title":"Research Associate",
 			"location":"M St. Washington, DC",
 			"dates":"Oct 2006-Feb 2007",
@@ -116,6 +116,10 @@ bio.display = function() {
 	var formattedPicture = HTMLbioPic.replace("%data%",bio.pictureURL);
 	var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcome);
 
+	function capital (str) {        //for consistent variable naming in next few lines
+		return str[0].toUpperCase()+str.substr(1);
+	}
+
 	for (contact in bio.contacts) {
 		window['formatted' + capital(contact)] = HTMLcontactGeneric.replace("%contact%",contact).replace("%data%",bio.contacts[contact]);
 	}  //Creation of formattedContact variables using HTMLcontactGeneric
@@ -124,7 +128,7 @@ bio.display = function() {
 	$(".bio-page").prepend(formattedPicture,formattedWelcome);
 
 	$(".topContacts").append(formattedMobile,formattedEmail,formattedGithub);
-	$("#footerContacts").append(formattedMobile,formattedTwitter)
+	$("#footerContacts").append(formattedEmail,formattedMobile,formattedTwitter)
 
 	if (bio.skills) {
 		$(".topContacts").after(HTMLskillsStart);
@@ -143,7 +147,6 @@ work.display = function() {
 		var formattedDate = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-
 		$(".work-entry:last").append(formattedEmployer+formattedTitle+formattedDate+formattedLocation+formattedworkDescription);
 	}
 }
@@ -164,7 +167,6 @@ projects.display = function() {
 }
 
 education.display = function() {
-
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		var formattedSchool = HTMLschoolName.replace("%data%",education.schools[school].name);
@@ -190,7 +192,6 @@ work.display();
 projects.display();
 education.display();
 
-
 $(document).click(function(loc) {
 	logClicks(loc.pageX, loc.pageY);
 });
@@ -198,15 +199,10 @@ $(document).click(function(loc) {
 $("#mid-header").append(internationalizeButton)
 
 function inName() {
-	names = name.split(" ");
+	names = bio.name.split(" ");
     names[1] = names[1].toUpperCase();
     names[0] = names[0][0].toUpperCase() + names[0].slice(1).toLowerCase();
-	return names[0] + " " + names[1]
+	return names[0] + " " + names[1];
 }
 
-$("#mapDiv").append(googleMap)
-
-function capital (str) {
-	return str[0].toUpperCase()+str.substr(1);
-}
-
+$("#mapDiv").append(googleMap);

@@ -1,5 +1,4 @@
 /* Custom CSS styles */
-
 html,
 body {
 	height: 100%;
@@ -12,115 +11,84 @@ body {
 .title {
 	padding: 100px 0 0 0;
 	-webkit-transform-origin: left bottom;
-      transform-origin: left bottom;
-      transition: transform .5s ease-in;
+	transform-origin: left bottom;
+	transition: transform .5s ease-in;
 }
 .role {
 	color: #0D7689;
 }
 
+.tabs-holder {
+	width: 600px;
+}
+/* BODY BELOW HEADER Section */
+.under-header-body {
+	width: 900px;
+	height: 813px;
+	margin: auto;
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+		0  6px 30px 5px rgba(0, 0, 0, 0.12),
+		0  8px 10px -5px rgba(0, 0, 0, 0.4),
+		0 -16px 24px 2px rgba(0, 0, 0, 0.14),
+		0  -6px 30px 5px rgba(0, 0, 0, 0.12),
+		0  -8px 10px -5px rgba(0, 0, 0, 0.4);
+}
 
+/* Bio Section */
+#mid-header {
+	width: 300px;
+}
+
+.biopic {
+	border-radius: 150px;
+	float: left;
+	width: 150px;
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+		0 1px 8px 0 rgba(0, 0, 0, 0.12),
+		0 3px 3px -2px rgba(0, 0, 0, 0.4);
+}
+
+.welcome-message {
+	padding: 20px 5px 20px 5px;
+}
+
+hr {
+	width: 85%;
+}
+
+.donut-container {
+	font: 12px sans-serif;
+	width: 200px;
+	margin: auto;
+	padding: 0 0 20px 0;
+	color: #fff;
+}
+
+.name-button {
+	margin: auto;
+	width: 170px;
+	display: block;
+}
+
+/* TABS */
+.tab-div {
+	height: 813px;
+}
+
+.under-tab {
+	width: 600px;
+}
 
 .project-images {
 	width: 150px;
 	height: 150px;
 }
 
-
-
-
-#mid-header {
-  background-color: #777;
-}
-
-#workExperience {
-	background: #0D7689;
-	height: 100vh;
-}
-
-#projects {
-	background: #8aae26;
-}
-
-#education {
-	background: #f5684c;
-
-}
-
-#mapDiv {
-	background: #52cfe2;
-	height: 100vh;
-}
-
-#lets-connect {
-	background: #E6BC17;
-}
 #lets-connect h2{
 	text-shadow: 2px 2px 2px #444444;
 }
-.med-bkgrd {
-	background-color: #FFB74D;
 
-}
-hr {
-	width: 85%;
-}
-
-
-
-
-
-.future-class {
-	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-              0  6px 30px 5px rgba(0, 0, 0, 0.12),
-              0  8px 10px -5px rgba(0, 0, 0, 0.4),
-              0 -16px 24px 2px rgba(0, 0, 0, 0.14),
-              0  -6px 30px 5px rgba(0, 0, 0, 0.12),
-              0  -8px 10px -5px rgba(0, 0, 0, 0.4);
-
-
-}
-
-.page-center {
-	max-width: 1020px;
-
-	width: 920px;
-	height: 600px;
-	margin: auto;
-
-}
-
-.biopic {
-	border-radius: 150px;
-	width: 150px;
-	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
-                  0 1px 8px 0 rgba(0, 0, 0, 0.12),
-                  0 3px 3px -2px rgba(0, 0, 0, 0.4);
-}
-.welcome-message {
-
-	padding: 20px 5px 20px 5px;
-}
-
-#mid-header {
-	width: 300px;
-}
-
-.under-header-body {
-	width: 900px;
-	margin: auto;
-}
-
-.tabs-holder {
-	width: 600px;
-
-}
-.under-tab {
-	width: 600px;
-}
-.info-window {
-
-}
+/* MAP STYLES infowindow  */
 
 .info-title {
 	font-size: 14px;
@@ -129,7 +97,6 @@ hr {
 	color: white;
 	padding: .4em;
 	text-align: center;
-
 }
 
 .info-sub {
@@ -139,62 +106,94 @@ hr {
 	font-weight: 500;
 	padding: .25em;
 }
-.donut-container {
-  			font: 12px sans-serif;
-  			width: 200px;
 
-  			margin: 20px auto;
-  			padding: 0 0 80px 0;
-  			color: #fff;
+/* BACKGROUND COLORS */
 
-		}
+#mid-header {
+  background-color: #777;
+}
 
+#workExperience {
+	background: #0D7689;
+}
 
-@media screen and (max-width: 920px) {        /*formating and background for large displays */
+#projects {
+	background: #8aae26;
+}
+
+#education {
+	background: #f5684c;
+}
+
+#mapDiv {
+	background: #52cfe2;
+}
+
+#lets-connect {
+	background: #E6BC17;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 920px) {
 	#mid-header {
 		width: 250px;
 	}
-	.biopic {
-		width: 100px;
-	}
+
 	.tabs-holder,
 	.under-tab {
-		width: calc(100% - 250px)
+		width: calc(100% - 250px);  /*area left over from first section*/
 	}
+
+	.tab-div {
+		height: 783px
+	}
+
 	.under-header-body {
 		width: 100%;
+		height: 783px;
 	}
+
 	h1 {
 		font-size: 35px;
 	}
+
 	.role {
 		font-size: 15px;
 	}
+
+	.biopic {
+		width: 100px;
+	}
+
 	.welcome-message {
 		padding: 5px;
 	}
 }
 
 @media screen and (max-width: 639px) {
-    #toolbar-header{
-        padding: 40px 0 0 0;
-        margin: 0;
-    }
+	#toolbar-header {
+		padding: 40px 0 0 0;
+		margin: 0;
+	}
 
-    #mid-header {
-      	width: 200px;
-    }
+	#mid-header {
+		width: 200px;
+	}
 
-    .tabs-holder,
+	.tabs-holder,
 	.under-tab {
 		width: calc(100% - 200px)
 	}
+
 	h1 {
 		font-size: 32px;
 	}
+
 	.role {
 		font-size: 13px;
 	}
+
 	.biopic {
 		display: block;
 		margin: 0 auto 20px auto;
@@ -202,112 +201,40 @@ hr {
 		transform: translateY(20px);
 	}
 
-}
+	#skills {
+		display: none;
+	}
 
 @media screen and (max-width: 500px) {
-	#toolbar-header{
-        padding: 0;
-    }
-
-    .tabs-holder,
-    .under-tab,
-    #mid-header {
-    	width: 100%
-    }
-
-    #stationary-content {
-    	display:none;
-    }
-
-    .biopic {
-    	float: left;
-    	transform: none;
-    	width: 130px;
-    	margin: 20px;
-    	 }
-
-    .welcome-message {
-    	font-size: 25px;
-    	padding: 30px 5px;
+	#toolbar-header {
+		padding: 0;
 	}
+
+	.tabs-holder,
+	.under-tab,
+	#mid-header {
+		width: 100%;
+
+	}
+
+	#stationary-content {
+		display:none;
+	}
+
+	.biopic {
+		float: left;
+		transform: none;
+		width: 130px;
+		margin: 20px;
+	}
+
+	.welcome-message {
+		display: block;
+		font-size: 25px;
+		padding: 30px 5px;
+	}
+
 	h1 {
 		font-size: 40px;
 	}
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-<style is="custom-style">
-paper-toolbar {
-
---paper-toolbar-background: #7d7e7d; /* Old browsers */
---paper-toolbar-background: -moz-linear-gradient(top,  #7d7e7d 0%, #7d7e7d 18%, #0e0e0e 100%); /* FF3.6+ */
---paper-toolbar-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(18%,#7d7e7d), color-stop(100%,#0e0e0e)); /* Chrome,Safari4+ */
---paper-toolbar-background: -webkit-linear-gradient(top,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
---paper-toolbar-background: -ms-linear-gradient(top,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%); /* IE10+ */
---paper-toolbar-background: linear-gradient(to bottom,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%); /* W3C */
-
-
-}
-
-
-
-
-
-</style>
-
-
-
-
-
-
-
-/*
-.paper-scroll-header-panel-0 #headerBg.paper-scroll-header-panel {
-	background-color: green;
-}
-
-.paper-scroll-header-panel-0 #condensedHeaderBg.paper-scroll-header-panel {
-  background-color: orange;
-}
-/*
-paper-scroll-header-panel {
-	background-color: var(grey, #eee);
-	--paper-scroll-header-panel-condensed-header: {
-        background-color: var(orange, #ff5722);
-      };
-	--paper-scroll-header-panel-full-header: {
-        background-image: url(../images/movies.jpg);
-      };
-}
-
-
-
-
-background-color: var(--paper-scroll-header-panel-full-header, green);
-
-paper-scroll-header-panel {
-      --paper-scroll-header-panel-full-header: {
-        background-color: red;
-      };
-    }
-
-paper-scroll-header-panel {
-      --paper-scroll-header-panel-condensed-header: {
-        background-color: #f4b400;
-      };
-    }

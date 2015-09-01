@@ -1,17 +1,3 @@
-/*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
-*/
-
-
-/*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
-*/
 var HTMLheaderName = '<div><h1 id="name">%data%</h1></div>';    /*addition of div so elements live vertically*/
 var HTMLheaderRole = '<div class="role">%data%</div>';
 
@@ -35,6 +21,7 @@ var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkPic = '<img src="%data ">'
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
@@ -56,18 +43,22 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<paper-button raised toggles class="name-button">Internationalize</paper-button>';
 var googleMap = '<div id="map"></div>';
 
-
-
+//Name Button
 $(document).ready(function() {
-  $('button').click(function() {
+  $('.name-button').click(function() {
+    function inName() {
+      names = bio.name.split(" ");
+      names[1] = names[1].toUpperCase();
+      names[0] = names[0][0].toUpperCase() + names[0].slice(1).toLowerCase();
+      return names[0] + " " + names[1];
+    }
     var iName = inName() || function(){};
     $('#name').html(iName);
   });
 });
-
 
 clickLocations = [];
 
@@ -84,34 +75,20 @@ function logClicks(x,y) {
 $(document).click(function(loc) {   //entire page click event listener
 });
 
-
-
-/*
-https://developers.google.com/maps/documentation/javascript/reference
-*/
 var map;
 
 function initializeMap() {
-
   var locations;
-
   var mapOptions = {
     disableDefaultUI: true
   };
-
-  /*
-  For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js.
-  */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-
   //creation of new function that also obtains name and date info in an array of arrays
-
   function mylocationFinder() {
     var mylocations = [];
     var subArray = [];
-    subArray.push(bio.contacts.location,"Home", "2005-present")
+    subArray.push(bio.contacts.location,"White House", "2005-present") //So pin location for "home" in Washington DC comes up with pic of white House
     mylocations.push(subArray);
     subArray = []
     for (var school in education.schools) {
@@ -127,17 +104,12 @@ function initializeMap() {
     return mylocations;
   }
 
-  /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
   function createMapMarker(placeData) {
     var lat = placeData.geometry.location.lat();
     var lon = placeData.geometry.location.lng();
     var address = placeData.formatted_address;  //formatted address for infoWindow
     var name = placeData.name;                  //Name for infoWindow
-    var photoUrl = placeData.photos[0].getUrl({'maxWidth': 65, 'maxHeight': 65})// photoUrl from search results and dimentions
+    var photoUrl = placeData.photos[0].getUrl({'maxWidth': 65, 'maxHeight': 65});// photoUrl from search results and dimentions
     var bounds = window.mapBounds;            // current boundaries of the map window
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
@@ -163,8 +135,6 @@ function initializeMap() {
       infoWindow.open(map, marker);
     });
 
-    // this is where the pin actually gets added to the map.
-    // bounds.extend() takes in a map location object
     bounds.extend(new google.maps.LatLng(lat, lon));
     // fit the map to the new marker
     map.fitBounds(bounds);
@@ -182,14 +152,12 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     for (var place in locations) {
-
       var request = {
         query: locations[place][0]+" " +locations[place][1] //addition of name data for better search results
       };
       service.textSearch(request, callback);
     }
   }
-
   // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
 
@@ -201,33 +169,12 @@ function initializeMap() {
 //window.addEventListener('load', initializeMap);
 
 window.addEventListener('resize', function(e) {
-  betterTransition();
-
+  betterTransition();  //to handle the would-be awkward transition when bio div turns into a tab div @500 px width
   map.fitBounds(mapBounds);
-
 });
 
 function betterTransition() {        //Handles when user is looking at bio page and resizes window
   if (pages.selected == 0 && window.innerWidth>500) {
     pages.selected = 1
   }
-
 }
-
-/*
-function mobileResize() {
-  if (window.innerWidth<500) {
-
-    $(".role").remove();
-
-
-    //$("paper-tabs").prepend(HTMLbioTab);
-
-  }
-  else {
-    $(".role").text("Super Ninja")
-  }
-}
-
-*/
-

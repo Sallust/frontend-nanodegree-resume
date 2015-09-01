@@ -1,0 +1,11 @@
+<style is="custom-style"> /*Tool bar gradient*/
+paper-toolbar {
+
+--paper-toolbar-background: #7d7e7d;
+--paper-toolbar-background: -moz-linear-gradient(top,  #7d7e7d 0%, #7d7e7d 18%, #0e0e0e 100%);
+--paper-toolbar-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e7d), color-stop(18%,#7d7e7d), color-stop(100%,#0e0e0e));
+--paper-toolbar-background: -webkit-linear-gradient(top,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%);
+--paper-toolbar-background: -ms-linear-gradient(top,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%);
+--paper-toolbar-background: linear-gradient(to bottom,  #7d7e7d 0%,#7d7e7d 18%,#0e0e0e 100%);
+}
+</style>
