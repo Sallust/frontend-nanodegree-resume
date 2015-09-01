@@ -130,7 +130,7 @@ bio.display = function() {
 	$(".topContacts").append(formattedMobile,formattedEmail,formattedGithub);
 	$("#footerContacts").append(formattedEmail,formattedMobile,formattedTwitter)
 
-	if (bio.skills) {
+	if (bio.skills.length > 0) {
 		$(".topContacts").after(HTMLskillsStart);
 	}
 	for (skill in bio.skills) {

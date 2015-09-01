@@ -24,7 +24,7 @@
   <link rel="import" href="bower_components/paper-button/paper-button.html">
   <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
   <link rel="import" href="bower_components/neon-animation/neon-animations.html">
-    <!--Custom Polymer Elements-->
+    <!--My Custom Polymer Elements-->
   <link rel="import" href="bower_components/neon-animation/my-neon-animatable.html">
   <link rel="import" href="elements/lets-connect.html">
   <link rel="import" href="elements/language-radio-chart.html">
@@ -101,29 +101,37 @@
       </footer>
     </paper-scroll-header-panel>
 
-  <script>           /*Tabs Scripts   */
+  <script>           /*Tabs Scripts */
     var tabs = document.querySelector('paper-tabs');
     var pages = document.querySelector('neon-animated-pages');
-    if (window.innerWidth<500) {
-      pages.selected=0;    /*Opens to Header Tab on small screens */
-    }
-    else {
-      pages.selected=1;       /* otherwise opens to work tab */
-    }
+    pages.selected= 0;      /*Opens to Header Tab on small screens */
 
     tabs.addEventListener('iron-select',function(){
     pages.selected = tabs.selected;
     });
-
-    $("#mapTab").click(function() {   //new click event (tab-click vs page load) on which to initialize Map
-      initializeMap();
-    })
-                 /* Opening Animation */
+            /* Opening Animation */
     document.addEventListener('WebComponentsReady', function() {
         document.querySelector('paper-card').show();
         document.querySelector('my-neon-animatable').show();
         document.querySelector('paper-toolbar').show();
+        if (window.innerWidth>500) {
+          pages.selected=1;   /*Opens to Work Tab on regular screens; also incorporates entry animation*/
+        }
       });
+
+    $("#mapTab").click(function() {   //Map Init on Map Tab Click so fitBounds can read size
+      initializeMap();
+    });
+
+     //Shrinks Title on scroll
+    var title = document.querySelector('.title');
+    addEventListener('paper-header-transform', function(e) {
+      var d = e.detail;
+      var m = d.height - d.condensedHeight;
+      var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
+
+      Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
+    });
 
   </script>
   <script src="js/resumeBuilder.js"></script>
@@ -132,8 +140,8 @@
     <!--Script including the actual function to make the chart-->
   <script src="js/makeDonut.js"></script>
   <script type="text/javascript">
-      makeDonut("elements/data.csv","#donut");
-      makeDonut("elements/data.csv","#donut2");
+    makeDonut('elements/data.csv','#donut','language','level');
+    makeDonut('elements/data.csv','#donut2','language','level');
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
@@ -157,15 +165,7 @@
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.backgroundColor = "black";
     }
-      //Shrinks Title on scroll
-    var title = document.querySelector('.title');
-    addEventListener('paper-header-transform', function(e) {
-      var d = e.detail;
-      var m = d.height - d.condensedHeight;
-      var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
 
-      Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
-    });
   </script>
 </body>
 </html>

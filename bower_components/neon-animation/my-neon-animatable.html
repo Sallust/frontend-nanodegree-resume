@@ -30,7 +30,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     :host {
       display: block;
-
     }
 
   </style>
@@ -58,16 +57,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: function() {
           return {
             'entry': [{
-            // provided by neon-animation/animations/slide from left and fade in-animation.html
+            // provided by neon-animation/animations/scale-up-animation.html
               name: 'fade-in-animation',
               node: this
             }, {
               name:'slide-from-left-animation',
-              node: this
+              node: this,
+              timing: {delay: 0}
+
             }],
 
             'exit': [{
-              // provided by neon-animation-animations/fade-out-animation and slide right.html
+              // provided by neon-animation-animations/fade-out-animation.html
               name: 'slide-right-animation',
               node: this
               }, {

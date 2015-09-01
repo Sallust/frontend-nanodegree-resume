@@ -88,7 +88,7 @@ function initializeMap() {
   function mylocationFinder() {
     var mylocations = [];
     var subArray = [];
-    subArray.push(bio.contacts.location,"White House", "2005-present") //So pin location for "home" in Washington DC comes up with pic of white House
+    subArray.push(bio.contacts.location, 'White House','2005-present' //So pin location for "home" in Washington DC comes up with pic of white House
     mylocations.push(subArray);
     subArray = []
     for (var school in education.schools) {
@@ -119,7 +119,7 @@ function initializeMap() {
     });
       //function that creates string with infoWindow information dependening on photo existence
     function infoWindowContent(name, address, photoUrl) {
-      infoWindowContent = "<div class='info-window'><h5 class='info-title'>" + name + "</h5><p class='info-sub'>" + address + "</p> </div> "
+      infoWindowContent = '<div class="info-window"><h5 class="info-title">' + name + '</h5><p class="info-sub">' + address + '</p> </div> '
       if (photoUrl) {
         infoWindowContent = infoWindowContent.slice(0,-7) + '<img src="'+ photoUrl +'">'+ infoWindowContent.slice(-7,-1)
       }
@@ -153,7 +153,7 @@ function initializeMap() {
 
     for (var place in locations) {
       var request = {
-        query: locations[place][0]+" " +locations[place][1] //addition of name data for better search results
+        query: locations[place][0]+ ' ' +locations[place][1] //addition of name data for better search results
       };
       service.textSearch(request, callback);
     }

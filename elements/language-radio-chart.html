@@ -10,32 +10,36 @@
     </script>
 
 <dom-module id="language-radio-chart">
-<style>
+<style>      /*Change custom elements here; Only place custom styles were accessible*/
 	paper-radio-button.teal {
-      		--paper-radio-button-checked-color: #0D7689;
-      		--paper-radio-button-checked-ink-color: #0D7689;
-      		}
-	paper-radio-button.green {
-      		--paper-radio-button-checked-color: #8aae26;
-      		--paper-radio-button-checked-ink-color: #8aae26;
-      		}
-	paper-radio-button.orange {
-      		--paper-radio-button-checked-color: #f5684c;
-      		--paper-radio-button-checked-ink-color: #f5684c;
-      		}
-	paper-radio-button.blue {
-      		--paper-radio-button-checked-color: #52cfe2;
-      		--paper-radio-button-checked-ink-color: #52cfe2;
-      		}
-    paper-radio-button.yellow {
-      		--paper-radio-button-checked-color: #E6BC17;
-      		--paper-radio-button-checked-ink-color: #E6BC17;
-      		}
-</style>
+		--paper-radio-button-checked-color: #0D7689;
+		--paper-radio-button-checked-ink-color: #0D7689;
+	}
 
+	paper-radio-button.green {
+		--paper-radio-button-checked-color: #8aae26;
+		--paper-radio-button-checked-ink-color: #8aae26;
+	}
+
+	paper-radio-button.orange {
+		--paper-radio-button-checked-color: #f5684c;
+		--paper-radio-button-checked-ink-color: #f5684c;
+	}
+
+	paper-radio-button.blue {
+		--paper-radio-button-checked-color: #52cfe2;
+		--paper-radio-button-checked-ink-color: #52cfe2;
+	}
+
+	paper-radio-button.yellow {
+		--paper-radio-button-checked-color: #E6BC17;
+		--paper-radio-button-checked-ink-color: #E6BC17;
+	}
+
+</style>
 	<template>
 		<style>
-
+						/*Gave each button a number, placed data bound class {{skill level}} in front of class so Number of buttons to be greyed out is easily changed by selecting lev  */
 		.levOne >.two,
 		.levOne >.three,
 		.levOne >.four,
@@ -61,8 +65,8 @@
 		.chart-container {
 			width: 200px;
 			margin: 0 auto;
-
 		}
+
 		h4 {
 			text-align: center;
 			color: #fff;
@@ -71,7 +75,7 @@
 		</style>
 		<div class="chart-container">
 			<h4>Language Skills</h4>
-
+					<!--template for one row of buttons; repeat for each language in language array -->
 			<template is="dom-repeat" items="{{languages}}">
 
 				<div class="button-row" class$="{{item.skill}}">
@@ -80,10 +84,7 @@
         			<paper-radio-button class="green three" checked='null'></paper-radio-button>
         			<paper-radio-button class="teal two" checked></paper-radio-button>
         			<paper-radio-button class="blue one" checked>{{item.lang}}</paper-radio-button>
-
         		</div>
-
-
         	</template>
         </div>
     </template>
@@ -94,7 +95,7 @@
 		is: 'language-radio-chart',
 
 		ready: function() {
-			this.languages = [
+			this.languages = [     /*modifiable to any skill measurable by 1-5 buttons*/
 				{lang: "Spanish" , skill: 'levFour'},
 				{lang: "English" , skill: 'levFive'},
 				{lang: "Portuguese" , skill: 'levOne'},
@@ -102,13 +103,7 @@
 				{lang: "Latin", skill: 'levThree'}
 			];
 		},
-
-
 	});
-
-
-
-
 </script>
 
 
