@@ -70,44 +70,44 @@ var projects = {
 }
 
 var education = {
-    "schools": [
-        {
-            "name": "Harvard University",
-            "location": "Cambridge, MA",
-            "degree": "BA",
-            "dates": "2000-2005",
-            "major": "Economics",
-            "url":"http://www.harvard.edu/"
-        },
-        {
-            "name": "University of California Berkeley",
-            "location": "Berkeley, CA",
-            "degree": "coursework",
-            "dates": "Summer 2004",
-            "major": "Accounting",
-            "url":"http://www.berkeley.edu/"
-        }
-    ],
-    "onlineCourses":[
-    	{
-    		"title":"JavaScript",
-    		"school":"Udacity",
-    		"dates":"Summer 2015",
-    		"url":"https://www.udacity.com/course/javascript-basics--ud804"
-    	},
-    	{
-    		"title":"Intro to HTML & CSS",
-    		"school":"Udacity",
-    		"dates":"Summer 2015",
-    		"url":"https://www.udacity.com/course/intro-to-html-and-css--ud304"
-    	},
-    	{
-    		"title":"Programming Foundations with Python",
-    		"school":"Udacity",
-    		"dates":"Summer 2015",
-    		"url":"https://www.udacity.com/course/programming-foundations-with-python--ud036"
-    	}
-    ]
+	"schools": [
+		{
+			"name": "Harvard University",
+			"location": "Cambridge, MA",
+			"degree": "BA",
+			"dates": "2000-2005",
+			"major": "Economics",
+			"url":"http://www.harvard.edu/"
+		},
+		{
+			"name": "University of California Berkeley",
+			"location": "Berkeley, CA",
+			"degree": "coursework",
+			"dates": "Summer 2004",
+			"major": "Accounting",
+			"url":"http://www.berkeley.edu/"
+		}
+	],
+	"onlineCourses":[
+		{
+			"title":"JavaScript",
+			"school":"Udacity",
+			"dates":"Summer 2015",
+			"url":"https://www.udacity.com/course/javascript-basics--ud804"
+		},
+		{
+			"title":"Intro to HTML & CSS",
+			"school":"Udacity",
+			"dates":"Summer 2015",
+			"url":"https://www.udacity.com/course/intro-to-html-and-css--ud304"
+		},
+		{
+			"title":"Programming Foundations with Python",
+			"school":"Udacity",
+			"dates":"Summer 2015",
+			"url":"https://www.udacity.com/course/programming-foundations-with-python--ud036"
+		}
+	]
 }
 
 bio.display = function() {
@@ -197,12 +197,4 @@ $(document).click(function(loc) {
 });
 
 $("#mid-header").append(internationalizeButton)
-
-function inName() {
-	names = bio.name.split(" ");
-    names[1] = names[1].toUpperCase();
-    names[0] = names[0][0].toUpperCase() + names[0].slice(1).toLowerCase();
-	return names[0] + " " + names[1];
-}
-
 $("#mapDiv").append(googleMap);
