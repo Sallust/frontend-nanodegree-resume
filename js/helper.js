@@ -88,7 +88,7 @@ function initializeMap() {
   function mylocationFinder() {
     var mylocations = [];
     var subArray = [];
-    subArray.push(bio.contacts.location, 'White House','2005-present' //So pin location for "home" in Washington DC comes up with pic of white House
+    subArray.push(bio.contacts.location, 'White House','2005-present') //So pin location for "home" in Washington DC comes up with pic of white House
     mylocations.push(subArray);
     subArray = []
     for (var school in education.schools) {
