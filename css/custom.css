@@ -6,6 +6,10 @@ body {
 	background: #0e0e0e;
 }
 
+h2 {
+	text-shadow: 0px 2px 2px #444444;
+}
+
 /* HEADER */
 
 .title {
@@ -84,10 +88,6 @@ hr {
 	height: 150px;
 }
 
-#lets-connect h2{
-	text-shadow: 2px 2px 2px #444444;
-}
-
 /* MAP STYLES infowindow  */
 
 .info-title {
@@ -99,11 +99,10 @@ hr {
 	text-align: center;
 }
 
+
 .info-sub {
-	font-size: 12px;
-	line-height: 10px;
+	font: 500 12px/10px sans-serif;
 	color: #111;
-	font-weight: 500;
 	padding: .25em;
 }
 
@@ -131,6 +130,11 @@ hr {
 
 #lets-connect {
 	background: #E6BC17;
+}
+
+/* Footer */
+#footerContacts .white-text {
+	color: #777;
 }
 
 /* MEDIA QUERIES */
@@ -204,6 +208,7 @@ hr {
 	#skills {
 		display: none;
 	}
+}
 
 @media screen and (max-width: 500px) {
 	#toolbar-header {
@@ -214,7 +219,6 @@ hr {
 	.under-tab,
 	#mid-header {
 		width: 100%;
-
 	}
 
 	#stationary-content {

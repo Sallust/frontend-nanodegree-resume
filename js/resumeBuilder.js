@@ -174,7 +174,7 @@ education.display = function() {
 		var formattedDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
 		var formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
 		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].major);
-		$(".education-entry:last").append(formattedSchool,formattedDegree,formattedDates,formattedLocation,formattedMajor)
+		$(".education-entry:last").append(formattedSchool+formattedDegree+formattedDates+formattedLocation+formattedMajor)
 	}
 	$("#education").append(HTMLonlineClasses);
 	for (course in education.onlineCourses) {
