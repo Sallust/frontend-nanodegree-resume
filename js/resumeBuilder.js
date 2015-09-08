@@ -8,10 +8,10 @@ var bio = {
 		"twitter" : "@SallustV",
 		"location" : "Washington, DC"
 	},
-	"welcome" : '"Welcome to the awesomness that is my resume"',
+	"welcome" : '"Welcome to the awesomeness that is my resume"',
 	"pictureURL" : "images/me.jpg",
-	"skills" : ["awesomness","amazingness","JS","HTML","CSS"]
- }
+	"skills" : ["awesomeness","amazingness","JS","HTML","CSS"]
+};
 
 var work = {
 	"jobs": [
@@ -44,7 +44,7 @@ var work = {
 			"description": " Underwrote equity-equivalent investments to qualifying non-profit agencies with assets up to $40 million."
 		}
 	]
-}
+};
 
 var projects = {
 	"project": [
@@ -67,7 +67,7 @@ var projects = {
 			"images":["images/movies.jpg"]
 		}
 	]
-}
+};
 
 var education = {
 	"schools": [
@@ -108,7 +108,7 @@ var education = {
 			"url":"https://www.udacity.com/course/programming-foundations-with-python--ud036"
 		}
 	]
-}
+};
 
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%",bio.name);
@@ -120,7 +120,7 @@ bio.display = function() {
 		return str[0].toUpperCase()+str.substr(1);
 	}
 
-	for (contact in bio.contacts) {
+	for (var contact in bio.contacts) {
 		window['formatted' + capital(contact)] = HTMLcontactGeneric.replace("%contact%",contact).replace("%data%",bio.contacts[contact]);
 	}  //Creation of formattedContact variables using HTMLcontactGeneric
 
@@ -133,14 +133,14 @@ bio.display = function() {
 	if (bio.skills.length > 0) {
 		$(".topContacts").after(HTMLskillsStart);
 	}
-	for (skill in bio.skills) {
+	for (var skill in bio.skills) {
 		var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill])
 		$("#skills").prepend(formattedSkill)
 	}
 }
 
 work.display = function() {
-	for (job in work.jobs) {
+	for (var job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -152,7 +152,7 @@ work.display = function() {
 }
 
 projects.display = function() {
-	for (project in projects.project) {
+	for (var project in projects.project) {
 		$("#projects").append(HTMLprojectStart);
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
 		var formattedDate = HTMLprojectDates.replace("%data%", projects.project[project].dates);
@@ -167,7 +167,7 @@ projects.display = function() {
 }
 
 education.display = function() {
-	for (school in education.schools) {
+	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
 		var formattedSchool = HTMLschoolName.replace("%data%",education.schools[school].name);
 		var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
@@ -177,7 +177,7 @@ education.display = function() {
 		$(".education-entry:last").append(formattedSchool+formattedDegree+formattedDates+formattedLocation+formattedMajor)
 	}
 	$("#education").append(HTMLonlineClasses);
-	for (course in education.onlineCourses) {
+	for (var course in education.onlineCourses) {
 		$("#education").append(HTMLonlineClassStart)
 		var formattedTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[course].title);
 		var formattedSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);

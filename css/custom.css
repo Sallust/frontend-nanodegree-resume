@@ -7,7 +7,7 @@ body {
 }
 
 h2 {
-	text-shadow: 0px 2px 2px #444444;
+	text-shadow: 0px 2px 2px #444;
 }
 
 /* HEADER */
@@ -16,10 +16,11 @@ h2 {
 	padding: 100px 0 0 0;
 	-webkit-transform-origin: left bottom;
 	transform-origin: left bottom;
-	transition: transform .5s ease-in;
+	transition: transform 0.5s ease-in;
 }
+
 .role {
-	color: #0D7689;
+	color: #0d7689;
 }
 
 .tabs-holder {
@@ -92,10 +93,10 @@ hr {
 
 .info-title {
 	font-size: 14px;
-	background-color: #0D7689;
+	background-color: #0d7689;
 	border-radius: 2px 2px 0 0;
 	color: white;
-	padding: .4em;
+	padding: 0.4em;
 	text-align: center;
 }
 
@@ -103,17 +104,17 @@ hr {
 .info-sub {
 	font: 500 12px/10px sans-serif;
 	color: #111;
-	padding: .25em;
+	padding: 0.25em;
 }
 
 /* BACKGROUND COLORS */
 
 #mid-header {
-  background-color: #777;
+	background-color: #777;
 }
 
 #workExperience {
-	background: #0D7689;
+	background: #0d7689;
 }
 
 #projects {
@@ -129,7 +130,7 @@ hr {
 }
 
 #lets-connect {
-	background: #E6BC17;
+	background: #e6bc17;
 }
 
 /* Footer */
