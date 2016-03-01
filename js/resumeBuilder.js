@@ -20,7 +20,7 @@ var work = {
 			"title":"Merchandising Manager",
 			"location":"Bethesda, MD",
 			"dates":"Dec 2010-May2014",
-			"description":"Made the store amazing using my intrinsic awesomeness"
+			"description":"•	Increased annual store sales from $5.1 to $5.9 over 3 years through customer-focused service behavior, client outreach and staff talent development.•	Identified and developed talent: •	Analyzed product sales data for trends and losses as to maximize real estate and react to underperformers and sell-through.•	Compiled insightful product feedback incorporating both sales data and individual customer reactions.•	Executed 3 successful new store openings as part of a team of merchants and logistics partners."
 		},
 		{
 			"employer":"Banana Republic",
